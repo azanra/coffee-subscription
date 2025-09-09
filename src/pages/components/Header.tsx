@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import logo from "../../assets/shared/desktop/logo.svg";
 
 const Header = () => {
   const navigation = [
@@ -8,7 +9,9 @@ const Header = () => {
   ];
   return (
     <div>
-      <div></div>
+      <div>
+        <img src={logo} alt="coffee" />
+      </div>
       <div>
         {navigation.map((nav) => {
           return (
