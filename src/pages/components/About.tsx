@@ -1,10 +1,11 @@
+import AboutUs from "./AboutUs";
 import Header from "./Header";
 
 const About = () => {
   return (
     <div>
       <Header />
-      <p>This is about page</p>
+      <AboutUs />
     </div>
   );
 };
