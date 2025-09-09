@@ -1,4 +1,5 @@
 import AboutUs from "./AboutUs";
+import Commitment from "./Commitment";
 import Header from "./Header";
 
 const About = () => {
@@ -6,6 +7,7 @@ const About = () => {
     <div>
       <Header />
       <AboutUs />
+      <Commitment />
     </div>
   );
 };
