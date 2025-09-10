@@ -12,7 +12,7 @@ const Home = () => {
       <CreatePlan />
       <Collection />
       <ChooseUs />
-      <Work />
+      <Work withBtn={true} />
       <Footer />
     </div>
   );

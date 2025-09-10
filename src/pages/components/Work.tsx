@@ -1,4 +1,10 @@
-const Work = () => {
+const Work = ({
+  withBtn,
+  customClass,
+}: {
+  withBtn: boolean;
+  customClass?: string;
+}) => {
   const workList = [
     {
       header: "Pick your coffee",
@@ -14,7 +20,7 @@ const Work = () => {
     },
   ];
   return (
-    <div>
+    <div className={`${customClass}`}>
       <div>
         <h1>How it works</h1>
       </div>
@@ -34,9 +40,11 @@ const Work = () => {
           );
         })}
       </div>
-      <div>
-        <button>Create your plan</button>
-      </div>
+      {withBtn && (
+        <div>
+          <button>Create your plan</button>
+        </div>
+      )}
     </div>
   );
 };
