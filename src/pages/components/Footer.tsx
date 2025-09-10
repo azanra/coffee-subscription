@@ -7,8 +7,8 @@ import { Link } from "react-router";
 const Footer = () => {
   const navList = [
     { to: "/", text: "home" },
-    { to: "about", text: "about us" },
-    { to: "plan", text: "create your plan" },
+    { to: "/about", text: "about us" },
+    { to: "/plan", text: "create your plan" },
   ];
   const socialMediaList = [facebook, twitter, instagram];
   return (
@@ -19,7 +19,7 @@ const Footer = () => {
       <div>
         {navList.map((list) => {
           return (
-            <Link key={list.text} to={list.to}>
+            <Link replace key={list.text} to={list.to}>
               {list.text}
             </Link>
           );
