@@ -1,9 +1,9 @@
-import ChooseUs from "./components/ChooseUs";
-import Collection from "./components/Collection";
-import CreatePlan from "./components/CreatePlan";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Work from "./components/Work";
+import ChooseUs from "./components/home/ChooseUs";
+import Collection from "./components/home/Collection";
+import CreatePlan from "./components/home/CreatePlan";
+import Footer from "./components/shared/Footer";
+import Header from "./components/shared/Header";
+import Work from "./components/shared/Work";
 
 const Home = () => {
   return (

@@ -1,6 +1,6 @@
-import coffee from "../../assets/home/desktop/icon-coffee-bean.svg";
-import gift from "../../assets/home/desktop/icon-gift.svg";
-import truck from "../../assets/home/desktop/icon-truck.svg";
+import coffee from "../../../assets/home/desktop/icon-coffee-bean.svg";
+import gift from "../../../assets/home/desktop/icon-gift.svg";
+import truck from "../../../assets/home/desktop/icon-truck.svg";
 
 const ChooseUs = () => {
   const chooseUsList = [

@@ -1,4 +1,4 @@
-import whiteCup from "../../assets/about/desktop/image-hero-whitecup.jpg";
+import whiteCup from "../../../assets/about/desktop/image-hero-whitecup.jpg";
 
 const AboutUs = () => {
   return (

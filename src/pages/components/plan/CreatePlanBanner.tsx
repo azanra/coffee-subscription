@@ -1,4 +1,4 @@
-import plan from "../../assets/plan/desktop/image-hero-blackcup.jpg";
+import plan from "../../../assets/plan/desktop/image-hero-blackcup.jpg";
 
 const CreatePlanBanner = () => {
   return (

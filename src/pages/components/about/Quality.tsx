@@ -1,4 +1,4 @@
-import coffee from "../../assets/about/desktop/image-quality.jpg";
+import coffee from "../../../assets/about/desktop/image-quality.jpg";
 
 const Quality = () => {
   return (

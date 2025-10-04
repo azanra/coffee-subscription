@@ -1,4 +1,4 @@
-import brewing from "../../assets/about/desktop/image-commitment.jpg";
+import brewing from "../../../assets/about/desktop/image-commitment.jpg";
 
 const Commitment = () => {
   return (

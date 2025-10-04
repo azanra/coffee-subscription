@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import Content from "./Content";
 import Index from "./Index";
+import Content from "./Content";
 
 interface TableOfContent {
   number: number;

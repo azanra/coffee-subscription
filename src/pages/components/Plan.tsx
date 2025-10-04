@@ -1,7 +1,7 @@
-import CreatePlanBanner from "./CreatePlanBanner";
-import CustomizePlan from "./CustomizePlan";
-import Header from "./Header";
-import Work from "./Work";
+import CreatePlanBanner from "./plan/CreatePlanBanner";
+import CustomizePlan from "./plan/CustomizePlan";
+import Header from "./shared/Header";
+import Work from "./shared/Work";
 
 const Plan = () => {
   return (

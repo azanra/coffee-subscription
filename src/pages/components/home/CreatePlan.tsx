@@ -1,4 +1,4 @@
-import granEspresso from "../../assets/home/desktop/image-hero-coffeepress.jpg";
+import granEspresso from "../../../assets/home/desktop/image-hero-coffeepress.jpg";
 
 const CreatePlan = () => {
   return (

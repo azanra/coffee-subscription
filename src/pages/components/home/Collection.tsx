@@ -1,7 +1,7 @@
-import gran from "../../assets/home/desktop/image-gran-espresso.png";
-import planalto from "../../assets/home/desktop/image-planalto.png";
-import piccolo from "../../assets/home/desktop/image-piccollo.png";
-import danche from "../../assets/home/desktop/image-danche.png";
+import gran from "../../../assets/home/desktop/image-gran-espresso.png";
+import planalto from "../../../assets/home/desktop/image-planalto.png";
+import piccolo from "../../../assets/home/desktop/image-piccollo.png";
+import danche from "../../../assets/home/desktop/image-danche.png";
 
 const Collection = () => {
   const collectionList = [
