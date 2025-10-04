@@ -1,4 +1,5 @@
 import CreatePlanBanner from "./CreatePlanBanner";
+import CustomizePlan from "./CustomizePlan";
 import Header from "./Header";
 import Work from "./Work";
 
@@ -8,6 +9,7 @@ const Plan = () => {
       <Header />
       <CreatePlanBanner />
       <Work withBtn={false} />
+      <CustomizePlan />
     </div>
   );
 };
