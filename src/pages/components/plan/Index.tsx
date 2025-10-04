@@ -1,10 +1,10 @@
-interface Index {
+interface IIndex {
   number: number;
   id: string;
   questionRef: React.RefObject<HTMLDivElement | null>;
 }
 
-const Index = ({ number, id, questionRef }: Index) => {
+const Index = ({ number, id, questionRef }: IIndex) => {
   return (
     <div className="flex gap-[32px]">
       <p>{number}</p>

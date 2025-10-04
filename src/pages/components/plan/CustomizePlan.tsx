@@ -3,7 +3,7 @@ import TableOfContent from "./TableOfContent";
 const CustomizePlan = () => {
   const questionList = [
     {
-      id: "Preference",
+      id: "Preferences",
       question: "How do you drink your coffee ?",
       top: 0,
       options: [
@@ -22,7 +22,7 @@ const CustomizePlan = () => {
       ],
     },
     {
-      id: "type",
+      id: "Bean type",
       question: "What type of coffee?",
       top: 100,
       options: [
@@ -41,7 +41,7 @@ const CustomizePlan = () => {
       ],
     },
     {
-      id: "quantity",
+      id: "Quantity",
       question: "How much would you like",
       top: 200,
       options: [
@@ -60,7 +60,7 @@ const CustomizePlan = () => {
       ],
     },
     {
-      id: "grind",
+      id: "Grind option",
       question: "Want us to grind them?",
       top: 300,
       options: [
@@ -79,7 +79,7 @@ const CustomizePlan = () => {
       ],
     },
     {
-      id: "deliveries",
+      id: "Deliveries",
       question: "How often should we deliver",
       top: 400,
       options: [
