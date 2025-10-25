@@ -1,37 +1,22 @@
-import { useRef } from "react";
-import Index from "./Index";
 import Content from "./Content";
 
 interface ITableOfContent {
-  number: number;
-  id: string;
-  options: IOptions[];
-  question: string;
-  top: number;
+  list: {
+    id: string;
+    question: string;
+    options: ITableOfContentOption[];
+  };
 }
 
-export interface IOptions {
+export interface ITableOfContentOption {
   header: string;
   body: string;
 }
 
-const TableOfContent = ({
-  options,
-  number,
-  top,
-  id,
-  question,
-}: ITableOfContent) => {
-  const questionRef = useRef<HTMLDivElement>(null);
+const TableOfContent = ({ list }: ITableOfContent) => {
   return (
     <div className="flex gap-[64px] px-8">
-      <Index number={number} id={id} questionRef={questionRef} />
-      <Content
-        questionRef={questionRef}
-        question={question}
-        top={top}
-        options={options}
-      />
+      <Content id={list.id} question={list.question} options={list.options} />
     </div>
   );
 };

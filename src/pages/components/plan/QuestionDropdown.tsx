@@ -1,11 +1,11 @@
-import type { IOptions } from "./TableOfContent";
+import type { ITableOfContentOption } from "./TableOfContent";
 
 interface IQuestionDropdown {
-  options: IOptions[];
+  options: ITableOfContentOption[];
 }
 
 interface IQuestionList {
-  option: IOptions;
+  option: ITableOfContentOption;
 }
 
 const QuestionDropdown = ({ options }: IQuestionDropdown) => {

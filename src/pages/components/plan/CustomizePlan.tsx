@@ -1,11 +1,11 @@
+import Index from "./Index";
 import TableOfContent from "./TableOfContent";
 
 const CustomizePlan = () => {
   const questionList = [
     {
-      id: "Preferences",
+      id: "preferences",
       question: "How do you drink your coffee ?",
-      top: 0,
       options: [
         {
           header: "Capsule",
@@ -22,9 +22,8 @@ const CustomizePlan = () => {
       ],
     },
     {
-      id: "Bean type",
+      id: "beanType",
       question: "What type of coffee?",
-      top: 100,
       options: [
         {
           header: "Single origin",
@@ -41,9 +40,8 @@ const CustomizePlan = () => {
       ],
     },
     {
-      id: "Quantity",
+      id: "quantity",
       question: "How much would you like",
-      top: 200,
       options: [
         {
           header: "250g",
@@ -60,9 +58,8 @@ const CustomizePlan = () => {
       ],
     },
     {
-      id: "Grind option",
+      id: "grindOption",
       question: "Want us to grind them?",
-      top: 300,
       options: [
         {
           header: "Wholebean",
@@ -79,9 +76,8 @@ const CustomizePlan = () => {
       ],
     },
     {
-      id: "Deliveries",
+      id: "deliveries",
       question: "How often should we deliver",
-      top: 400,
       options: [
         {
           header: "Every week",
@@ -98,20 +94,48 @@ const CustomizePlan = () => {
       ],
     },
   ];
+
+  const indexList = [
+    {
+      id: "preferences",
+      name: "Preferences",
+    },
+    {
+      id: "beanType",
+      name: "Bean Type",
+    },
+    {
+      id: "quantity",
+      name: "Quantity",
+    },
+    {
+      id: "grindOption",
+      name: "Grind Option",
+    },
+    {
+      id: "deliveries",
+      name: "Deliveries",
+    },
+  ];
   return (
-    <div>
-      {questionList.map((list, index) => {
-        return (
-          <TableOfContent
-            key={list.id}
-            id={list.id}
-            number={index + 1}
-            question={list.question}
-            options={list.options}
-            top={list.top}
-          />
-        );
-      })}
+    <div className="flex">
+      <div>
+        {indexList.map((list, index) => {
+          return (
+            <Index
+              key={list.id}
+              number={index + 1}
+              id={list.id}
+              name={list.name}
+            />
+          );
+        })}
+      </div>
+      <div>
+        {questionList.map((list) => {
+          return <TableOfContent key={list.id} list={list} />;
+        })}
+      </div>
     </div>
   );
 };

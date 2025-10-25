@@ -1,21 +1,20 @@
 import { useState } from "react";
 import QuestionDropdown from "./QuestionDropdown";
-import type { IOptions } from "./TableOfContent";
+import type { ITableOfContentOption } from "./TableOfContent";
 
 interface IContent {
-  questionRef: React.RefObject<HTMLDivElement | null>;
+  id: string;
   question: string;
-  top: number;
-  options: IOptions[];
+  options: ITableOfContentOption[];
 }
 
-const Content = ({ questionRef, question, top, options }: IContent) => {
+const Content = ({ id, question, options }: IContent) => {
   const [isShown, setIsShown] = useState(false);
 
   return (
-    <div ref={questionRef} className="relative" style={{ top: `${top}px` }}>
+    <div>
       <div className="flex" onClick={() => setIsShown(!isShown)}>
-        <h1>{question}</h1>
+        <h1 id={`${id}`}>{question}</h1>
         <button>+</button>
       </div>
       {isShown && <QuestionDropdown options={options} />}

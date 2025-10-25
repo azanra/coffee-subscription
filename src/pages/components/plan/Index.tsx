@@ -1,20 +1,22 @@
 interface IIndex {
   number: number;
   id: string;
-  questionRef: React.RefObject<HTMLDivElement | null>;
+  name: string;
 }
 
-const Index = ({ number, id, questionRef }: IIndex) => {
+const Index = ({ number, id, name }: IIndex) => {
   return (
     <div className="flex gap-[32px]">
       <p>{number}</p>
       <p
         onClick={() => {
-          questionRef.current && questionRef.current.scrollIntoView();
+          document
+            .querySelector(`#${id}`)
+            ?.scrollIntoView({ behavior: "smooth" });
         }}
         className="w-[128px]"
       >
-        {id}
+        {name}
       </p>
     </div>
   );
