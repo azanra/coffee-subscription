@@ -6,6 +6,7 @@ interface ITableOfContent {
     question: string;
     options: ITableOfContentOption[];
   };
+  isCapsules: boolean;
 }
 
 export interface ITableOfContentOption {
@@ -13,10 +14,15 @@ export interface ITableOfContentOption {
   body: string;
 }
 
-const TableOfContent = ({ list }: ITableOfContent) => {
+const TableOfContent = ({ list, isCapsules }: ITableOfContent) => {
   return (
     <div className="flex gap-[64px] px-8">
-      <Content id={list.id} question={list.question} options={list.options} />
+      <Content
+        id={list.id}
+        question={list.question}
+        options={list.options}
+        isCapsules={isCapsules}
+      />
     </div>
   );
 };

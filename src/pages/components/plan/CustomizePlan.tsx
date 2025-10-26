@@ -1,7 +1,11 @@
 import Index from "./Index";
 import TableOfContent from "./TableOfContent";
 
-const CustomizePlan = () => {
+interface ICustomizePlan {
+  isCapsules: boolean;
+}
+
+const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
   const questionList = [
     {
       id: "preferences",
@@ -133,7 +137,9 @@ const CustomizePlan = () => {
       </div>
       <div>
         {questionList.map((list) => {
-          return <TableOfContent key={list.id} list={list} />;
+          return (
+            <TableOfContent key={list.id} list={list} isCapsules={isCapsules} />
+          );
         })}
       </div>
     </div>

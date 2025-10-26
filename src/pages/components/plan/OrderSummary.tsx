@@ -1,12 +1,14 @@
-const OrderSummary = () => {
-  const order = {
-    preference: "Filter",
-    beanType: "Blended",
-    quantity: "1000g",
-    grindOption: "Wholebean",
-    deliveries: "Every week",
+interface IOrderSummary {
+  order: {
+    preference: string | null;
+    beanType: string | null;
+    quantity: string | null;
+    grindOption: string | null;
+    deliveries: string | null;
   };
+}
 
+const OrderSummary = ({ order }: IOrderSummary) => {
   const { preference, beanType, quantity, grindOption, deliveries } = order;
 
   const isCapsules = preference === "Capsule";
@@ -35,7 +37,7 @@ const OrderSummary = () => {
       <div>
         <h1>Order Summary</h1>
         <p>
-          I drink my coffee {getPreference} with a {getBeanType} type of bean.{" "}
+          I drink my coffee {getPreference}, with a {getBeanType} type of bean.{" "}
           {getQuantity} {isWithGroundAla}
           {getGrindOption}, sent to me {getDeliveries}.
         </p>

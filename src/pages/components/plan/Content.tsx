@@ -6,16 +6,17 @@ interface IContent {
   id: string;
   question: string;
   options: ITableOfContentOption[];
+  isCapsules: boolean;
 }
 
-const Content = ({ id, question, options }: IContent) => {
+const Content = ({ id, question, options, isCapsules }: IContent) => {
   const [isShown, setIsShown] = useState(false);
 
   return (
     <div>
       <div className="flex" onClick={() => setIsShown(!isShown)}>
         <h1 id={`${id}`}>{question}</h1>
-        <button>+</button>
+        <button disabled={isCapsules}>+</button>
       </div>
       {isShown && <QuestionDropdown options={options} />}
     </div>
