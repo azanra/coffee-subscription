@@ -15,6 +15,11 @@ const OrderSummary = ({ order }: IOrderSummary) => {
   const isWholeBean = grindOption === "Wholebean";
   const isWithGroundAla = !isCapsules && !isWholeBean && "ground ala";
 
+  const isOrderCompleted =
+    preference && beanType && quantity && deliveries && isCapsules
+      ? isCapsules
+      : grindOption !== null;
+
   const getOrderSummary = (order: string | null, text: string = "") => {
     return (
       <span className={order ? "" : "inline-block w-[16px] border-b-1"}>
@@ -29,7 +34,7 @@ const OrderSummary = ({ order }: IOrderSummary) => {
   );
   const getBeanType = getOrderSummary(beanType);
   const getQuantity = getOrderSummary(quantity);
-  const getGrindOption = getOrderSummary(grindOption);
+  const getGrindOption = !isCapsules && getOrderSummary(grindOption);
   const getDeliveries = getOrderSummary(deliveries);
 
   return (
@@ -43,7 +48,7 @@ const OrderSummary = ({ order }: IOrderSummary) => {
         </p>
       </div>
       <div>
-        <button>Create my plan!</button>
+        <button disabled={isOrderCompleted}>Create my plan!</button>
       </div>
     </div>
   );

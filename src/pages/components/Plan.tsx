@@ -6,10 +6,10 @@ import Work from "./shared/Work";
 
 const Plan = () => {
   const order = {
-    preference: "Filter",
+    preference: "Capsule",
     beanType: "Blended",
     quantity: "1000g",
-    grindOption: "Wholebean",
+    grindOption: null,
     deliveries: "Every week",
   };
   const isCapsules = order.preference === "Capsule";
