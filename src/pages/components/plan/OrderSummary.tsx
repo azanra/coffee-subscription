@@ -48,7 +48,12 @@ const OrderSummary = ({ order }: IOrderSummary) => {
         </p>
       </div>
       <div>
-        <button disabled={isOrderCompleted}>Create my plan!</button>
+        <button
+          className="bg-[#0e8784] text-white font-bold px-[16px] py-[8px] rounded-md disabled:bg-[#e2dedb]"
+          disabled={isOrderCompleted}
+        >
+          Create my plan!
+        </button>
       </div>
     </div>
   );
