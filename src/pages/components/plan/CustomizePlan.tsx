@@ -122,7 +122,7 @@ const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
     },
   ];
   return (
-    <div className="flex">
+    <div className="flex justify-center gap-[64px]">
       <div>
         {indexList.map((list, index) => {
           return (

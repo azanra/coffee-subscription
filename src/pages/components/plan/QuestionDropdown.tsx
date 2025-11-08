@@ -10,7 +10,7 @@ interface IQuestionList {
 
 const QuestionDropdown = ({ options }: IQuestionDropdown) => {
   return (
-    <div className="flex">
+    <div className="flex gap-[32px]">
       {options.map((option) => {
         return <QuestionList option={option} key={option.header} />;
       })}
@@ -21,9 +21,9 @@ const QuestionDropdown = ({ options }: IQuestionDropdown) => {
 const QuestionList = ({ option }: IQuestionList) => {
   const { header, body } = option;
   return (
-    <div>
-      <h1>{header}</h1>
-      <p>{body}</p>
+    <div className="w-[220px] h-[200px] bg-[#f4f1eb] px-[16px] py-[24px] rounded-md hover:bg-[#fdd6ba]">
+      <h1 className="font-bold text-xl mb-[8px]">{header}</h1>
+      <p className="text-sm">{body}</p>
     </div>
   );
 };

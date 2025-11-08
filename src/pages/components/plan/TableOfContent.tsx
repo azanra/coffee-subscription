@@ -16,7 +16,7 @@ export interface ITableOfContentOption {
 
 const TableOfContent = ({ list, isCapsules }: ITableOfContent) => {
   return (
-    <div className="flex gap-[64px] px-8">
+    <div className="flex gap-[64px] px-8 mb-[32px]">
       <Content
         id={list.id}
         question={list.question}
