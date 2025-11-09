@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Index from "./Index";
 import TableOfContent from "./TableOfContent";
 
@@ -6,6 +7,8 @@ interface ICustomizePlan {
 }
 
 const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
+  const [selectedContent, setSelectedContent] = useState("");
+
   const questionList = [
     {
       id: "preferences",
@@ -121,6 +124,7 @@ const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
       name: "Deliveries",
     },
   ];
+
   return (
     <div className="flex justify-center gap-[64px]">
       <div>
@@ -138,7 +142,13 @@ const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
       <div>
         {questionList.map((list) => {
           return (
-            <TableOfContent key={list.id} list={list} isCapsules={isCapsules} />
+            <TableOfContent
+              key={list.id}
+              list={list}
+              isCapsules={isCapsules}
+              selectedContent={selectedContent}
+              setSelectedContent={setSelectedContent}
+            />
           );
         })}
       </div>

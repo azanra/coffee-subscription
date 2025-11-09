@@ -1,3 +1,4 @@
+import type React from "react";
 import Content from "./Content";
 
 interface ITableOfContent {
@@ -7,6 +8,8 @@ interface ITableOfContent {
     options: ITableOfContentOption[];
   };
   isCapsules: boolean;
+  selectedContent: string;
+  setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface ITableOfContentOption {
@@ -14,7 +17,12 @@ export interface ITableOfContentOption {
   body: string;
 }
 
-const TableOfContent = ({ list, isCapsules }: ITableOfContent) => {
+const TableOfContent = ({
+  list,
+  isCapsules,
+  selectedContent,
+  setSelectedContent,
+}: ITableOfContent) => {
   return (
     <div className="flex gap-[64px] px-8 mb-[32px]">
       <Content
@@ -22,6 +30,8 @@ const TableOfContent = ({ list, isCapsules }: ITableOfContent) => {
         question={list.question}
         options={list.options}
         isCapsules={isCapsules}
+        selectedContent={selectedContent}
+        setSelectedContent={setSelectedContent}
       />
     </div>
   );
