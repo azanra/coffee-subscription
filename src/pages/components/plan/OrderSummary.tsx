@@ -1,11 +1,13 @@
+export interface Order {
+  preference: string | null;
+  beanType: string | null;
+  quantity: string | null;
+  grindOption: string | null;
+  deliveries: string | null;
+}
+
 interface IOrderSummary {
-  order: {
-    preference: string | null;
-    beanType: string | null;
-    quantity: string | null;
-    grindOption: string | null;
-    deliveries: string | null;
-  };
+  order: Order;
 }
 
 const OrderSummary = ({ order }: IOrderSummary) => {
@@ -22,15 +24,22 @@ const OrderSummary = ({ order }: IOrderSummary) => {
 
   const getOrderSummary = (order: string | null, text: string = "") => {
     return (
-      <span className={order ? "" : "inline-block w-[16px] border-b-1"}>
-        {`${text} ${order}`}
+      <span>
+        {text}{" "}
+        <span
+          className={
+            order
+              ? "text-[#0e8784]"
+              : " inline-block w-[30px] h-[30px] border-b-1 border-dashed border-[#0e8784]"
+          }
+        >{`${order ? order : " "}`}</span>
       </span>
     );
   };
 
   const getPreference = getOrderSummary(
     preference,
-    isCapsules ? "using" : "as"
+    isCapsules ? "using" : "as",
   );
   const getBeanType = getOrderSummary(beanType);
   const getQuantity = getOrderSummary(quantity);
@@ -38,16 +47,16 @@ const OrderSummary = ({ order }: IOrderSummary) => {
   const getDeliveries = getOrderSummary(deliveries);
 
   return (
-    <div>
-      <div>
-        <h1>Order Summary</h1>
-        <p>
-          I drink my coffee {getPreference}, with a {getBeanType} type of bean.{" "}
+    <div className="mt-[64px]">
+      <div className="bg-[#2c343e] px-[64px] py-[32px] rounded-md mb-[64px]">
+        <h1 className="text-[#ffffff] opacity-[0.5] mb-[8px]">ORDER SUMMARY</h1>
+        <p className="text-white font-extrabold text-2xl">
+          "I drink my coffee {getPreference}, with a {getBeanType} type of bean.{" "}
           {getQuantity} {isWithGroundAla}
-          {getGrindOption}, sent to me {getDeliveries}.
+          {getGrindOption}, sent to me {getDeliveries}."
         </p>
       </div>
-      <div>
+      <div className="flex justify-end">
         <button
           className="bg-[#0e8784] text-white font-bold px-[16px] py-[8px] rounded-md disabled:bg-[#e2dedb]"
           disabled={isOrderCompleted}
