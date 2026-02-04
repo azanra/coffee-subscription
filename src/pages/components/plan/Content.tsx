@@ -24,7 +24,7 @@ const Content = ({
   return (
     <div className="cursor-pointer w-full">
       <div
-        className="flex mb-[32px] gap-[32px] justify-between"
+        className="flex mb-[40px] gap-[32px] justify-between"
         onClick={() => {
           setIsShown(!isShown);
           setSelectedContent(id);

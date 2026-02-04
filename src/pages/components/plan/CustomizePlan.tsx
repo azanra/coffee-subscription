@@ -1,17 +1,20 @@
 import { useState } from "react";
 import Index from "./Index";
 import TableOfContent from "./TableOfContent";
+import OrderSummary, { type Order } from "./OrderSummary";
 
 interface ICustomizePlan {
   isCapsules: boolean;
+  order: Order;
 }
 
-const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
+const CustomizePlan = ({ isCapsules, order }: ICustomizePlan) => {
   const [selectedContent, setSelectedContent] = useState("");
 
   const questionList = [
     {
       id: "preferences",
+      name: "Preferences",
       question: "How do you drink your coffee ?",
       options: [
         {
@@ -30,6 +33,7 @@ const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
     },
     {
       id: "beanType",
+      name: "Bean Type",
       question: "What type of coffee?",
       options: [
         {
@@ -48,6 +52,7 @@ const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
     },
     {
       id: "quantity",
+      name: "Quantity",
       question: "How much would you like",
       options: [
         {
@@ -66,6 +71,7 @@ const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
     },
     {
       id: "grindOption",
+      name: "Grind Option",
       question: "Want us to grind them?",
       options: [
         {
@@ -84,6 +90,7 @@ const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
     },
     {
       id: "deliveries",
+      name: "Deliveries",
       question: "How often should we deliver",
       options: [
         {
@@ -102,55 +109,35 @@ const CustomizePlan = ({ isCapsules }: ICustomizePlan) => {
     },
   ];
 
-  const indexList = [
-    {
-      id: "preferences",
-      name: "Preferences",
-    },
-    {
-      id: "beanType",
-      name: "Bean Type",
-    },
-    {
-      id: "quantity",
-      name: "Quantity",
-    },
-    {
-      id: "grindOption",
-      name: "Grind Option",
-    },
-    {
-      id: "deliveries",
-      name: "Deliveries",
-    },
-  ];
-
   return (
-    <div className="flex justify-center gap-[64px]">
+    <div className="flex justify-around gap-[64px]">
       <div>
-        {indexList.map((list, index) => {
+        {questionList.map((list, index) => {
           return (
             <Index
               key={list.id}
               number={index + 1}
               id={list.id}
               name={list.name}
+              setSelectedContent={setSelectedContent}
             />
           );
         })}
       </div>
-      <div>
-        {questionList.map((list) => {
+      <div className="w-[60%]">
+        {questionList.map((list, index) => {
           return (
             <TableOfContent
               key={list.id}
               list={list}
+              isLastItem={index === questionList.length - 1}
               isCapsules={isCapsules}
               selectedContent={selectedContent}
               setSelectedContent={setSelectedContent}
             />
           );
         })}
+        <OrderSummary order={order} />
       </div>
     </div>
   );

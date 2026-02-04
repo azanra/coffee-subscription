@@ -1,26 +1,33 @@
 import CreatePlanBanner from "./plan/CreatePlanBanner";
 import CustomizePlan from "./plan/CustomizePlan";
-import OrderSummary from "./plan/OrderSummary";
 import Header from "./shared/Header";
 import Work from "./shared/Work";
 
 const Plan = () => {
   const order = {
-    preference: "Capsule",
+    preference: "Filter",
     beanType: "Blended",
     quantity: "1000g",
-    grindOption: null,
+    grindOption: "Cafetiére",
     deliveries: "Every week",
+  };
+  const emptyOrder = {
+    preference: null,
+    beanType: null,
+    quantity: null,
+    grindOption: null,
+    deliveries: null,
   };
   const isCapsules = order.preference === "Capsule";
 
   return (
-    <div>
-      <Header />
-      <CreatePlanBanner />
-      <Work withBtn={false} />
-      <CustomizePlan isCapsules={isCapsules} />
-      <OrderSummary order={order} />
+    <div className="flex justify-center">
+      <div className="w-[65%]">
+        <Header />
+        <CreatePlanBanner />
+        <Work withBtn={false} />
+        <CustomizePlan isCapsules={isCapsules} order={order} />
+      </div>
     </div>
   );
 };

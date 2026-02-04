@@ -7,6 +7,7 @@ interface ITableOfContent {
     question: string;
     options: ITableOfContentOption[];
   };
+  isLastItem: boolean;
   isCapsules: boolean;
   selectedContent: string;
   setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
@@ -19,12 +20,13 @@ export interface ITableOfContentOption {
 
 const TableOfContent = ({
   list,
+  isLastItem,
   isCapsules,
   selectedContent,
   setSelectedContent,
 }: ITableOfContent) => {
   return (
-    <div className="flex gap-[64px] px-8 mb-[32px]">
+    <div className={`flex gap-[64px] ${!isLastItem && "mb-[40px]"}`}>
       <Content
         id={list.id}
         question={list.question}
