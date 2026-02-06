@@ -1,4 +1,6 @@
+import { useState } from "react";
 import OrderSummaryText from "./OrderSummaryText";
+import SummaryModal from "./SummaryModal";
 
 export interface Order {
   preference: string | null;
@@ -13,6 +15,8 @@ interface IOrderSummary {
 }
 
 const OrderSummary = ({ order }: IOrderSummary) => {
+  const [isShowCheckoutModal, setIsShowCheckoutModal] = useState(false);
+
   const { preference, beanType, quantity, grindOption, deliveries } = order;
   const isCapsules = preference === "Capsule";
 
@@ -34,10 +38,16 @@ const OrderSummary = ({ order }: IOrderSummary) => {
         <button
           className="bg-[#0e8784] text-white font-bold px-[16px] py-[8px] rounded-md disabled:bg-[#e2dedb]"
           disabled={!isOrderCompleted}
+          onClick={() => setIsShowCheckoutModal(true)}
         >
           Create my plan!
         </button>
       </div>
+      <SummaryModal
+        order={order}
+        isShowCheckoutModal={isShowCheckoutModal}
+        setIsShowCheckoutModal={setIsShowCheckoutModal}
+      />
     </div>
   );
 };
