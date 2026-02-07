@@ -10,15 +10,11 @@ export interface Order {
   deliveries: string | null;
 }
 
-interface IOrderSummary {
-  order: Order;
-}
-
-const OrderSummary = ({ order }: IOrderSummary) => {
+const OrderSummary = ({ order }: { order: Order }) => {
   const [isShowCheckoutModal, setIsShowCheckoutModal] = useState(false);
 
   const { preference, beanType, quantity, grindOption, deliveries } = order;
-  const isCapsules = preference === "Capsule";
+  const isCapsules = order.preference === "Capsule";
 
   const isOrderCompleted =
     preference && beanType && quantity && deliveries && isCapsules

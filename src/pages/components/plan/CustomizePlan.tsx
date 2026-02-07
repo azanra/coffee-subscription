@@ -3,17 +3,20 @@ import Index from "./Index";
 import TableOfContent from "./TableOfContent";
 import OrderSummary, { type Order } from "./OrderSummary";
 
-interface ICustomizePlan {
-  isCapsules: boolean;
-  order: Order;
-}
+const CustomizePlan = () => {
+  const [order, setOrder] = useState<Order>({
+    preference: null,
+    beanType: null,
+    quantity: null,
+    grindOption: null,
+    deliveries: null,
+  });
 
-const CustomizePlan = ({ isCapsules, order }: ICustomizePlan) => {
   const [selectedContent, setSelectedContent] = useState("");
 
   const questionList = [
     {
-      id: "preferences",
+      id: "preference",
       name: "Preferences",
       question: "How do you drink your coffee ?",
       options: [
@@ -109,6 +112,9 @@ const CustomizePlan = ({ isCapsules, order }: ICustomizePlan) => {
     },
   ];
 
+  const isCapsules = order.preference === "Capsule";
+  console.log(order);
+
   return (
     <div className="flex justify-around gap-[64px]">
       <div>
@@ -134,6 +140,8 @@ const CustomizePlan = ({ isCapsules, order }: ICustomizePlan) => {
               isCapsules={isCapsules}
               selectedContent={selectedContent}
               setSelectedContent={setSelectedContent}
+              order={order}
+              setOrder={setOrder}
             />
           );
         })}
