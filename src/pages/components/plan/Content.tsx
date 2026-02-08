@@ -27,6 +27,16 @@ const Content = ({
   const [isShown, setIsShown] = useState(false);
 
   const handleOrder = (orderOption: string, orderValue: string) => {
+    if (orderOption === "preference" && orderValue === "Capsule") {
+      setOrder({
+        ...order,
+        grindOption: null,
+        [orderOption]: orderValue,
+      });
+
+      return;
+    }
+
     setOrder({
       ...order,
       [orderOption]: orderValue,
