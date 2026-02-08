@@ -35,7 +35,6 @@ const TableOfContent = ({
     <div className={`flex gap-[64px] ${!isLastItem && "mb-[40px]"}`}>
       <Content
         id={list.id}
-
         question={list.question}
         options={list.options}
         isCapsules={isCapsules}

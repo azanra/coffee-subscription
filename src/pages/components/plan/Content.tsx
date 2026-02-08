@@ -33,10 +33,13 @@ const Content = ({
     });
   };
 
+  const isDisabled = isCapsules && id === "grindOption";
+
   return (
     <div className="cursor-pointer w-full">
-      <div
-        className="flex mb-[40px] gap-[32px] justify-between"
+      <button
+        className={`${isDisabled ? "opacity-50" : ""} w-full flex mb-[40px] gap-[32px] items-center justify-between`}
+        disabled={isDisabled}
         onClick={() => {
           setIsShown(!isShown);
           setSelectedContent(id);
@@ -48,12 +51,12 @@ const Content = ({
             selectedContent === id
               ? "underline text-[#2C343E]"
               : "text-[#83888f]"
-          } text-4xl font-extrabold hover:text-[#2C343E]`}
+          } text-4xl text-start font-extrabold hover:text-[#2C343E]`}
         >
           {question}
         </h1>
-        <button disabled={isCapsules}>+</button>
-      </div>
+        <div>+</div>
+      </button>
       {isShown && (
         <QuestionDropdown
           orderOption={id}
