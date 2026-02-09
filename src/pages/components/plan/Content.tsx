@@ -44,6 +44,7 @@ const Content = ({
   };
 
   const isDisabled = isCapsules && id === "grindOption";
+  console.log(order);
 
   return (
     <div className="cursor-pointer w-full">
@@ -69,8 +70,9 @@ const Content = ({
       </button>
       {isShown && (
         <QuestionDropdown
-          orderOption={id}
           options={options}
+          orderOption={id}
+          order={order}
           handleOrder={handleOrder}
         />
       )}
