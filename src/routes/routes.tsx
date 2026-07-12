@@ -1,6 +1,7 @@
 import App from "../App";
-import About from "../pages/components/About";
-import Plan from "../pages/components/Plan";
+import About from "../pages/about/About";
+
+import Plan from "../pages/plan/Plan";
 
 const routes = [
   {

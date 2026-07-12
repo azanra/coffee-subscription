@@ -1,3 +1,4 @@
+import PageWrapper from "../shared/components/PageWrapper";
 import ChooseUs from "./components/home/ChooseUs";
 import Collection from "./components/home/Collection";
 import CreatePlan from "./components/home/CreatePlan";
@@ -7,14 +8,14 @@ import Work from "./components/shared/Work";
 
 const Home = () => {
   return (
-    <div>
+    <PageWrapper>
       <Header />
       <CreatePlan />
       <Collection />
       <ChooseUs />
       <Work withBtn={true} />
       <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 
