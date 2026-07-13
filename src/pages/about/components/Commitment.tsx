@@ -1,10 +1,10 @@
-import brewing from "../../../assets/about/desktop/image-commitment.jpg";
+import Brewing from "../../../assets/about/desktop/image-commitment.jpg";
 
 const Commitment = () => {
   return (
     <div>
       <div>
-        <img src={brewing} alt="brewing" />
+        <img src={Brewing} alt="brewing" />
       </div>
       <div>
         <h1>Our commitment</h1>

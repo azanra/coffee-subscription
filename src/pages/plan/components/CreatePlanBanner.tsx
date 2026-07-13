@@ -1,10 +1,10 @@
-import plan from "../../../assets/plan/desktop/image-hero-blackcup.jpg";
+import Plan from "../../../assets/plan/desktop/image-hero-blackcup.jpg";
 
 const CreatePlanBanner = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${plan})`,
+        backgroundImage: `url(${Plan})`,
       }}
     >
       <div>

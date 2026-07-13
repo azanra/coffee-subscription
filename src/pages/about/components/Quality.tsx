@@ -1,4 +1,4 @@
-import coffee from "../../../assets/about/desktop/image-quality.jpg";
+import Coffee from "../../../assets/about/desktop/image-quality.jpg";
 
 const Quality = () => {
   return (
@@ -15,7 +15,7 @@ const Quality = () => {
         </p>
       </div>
       <div>
-        <img src={coffee} alt="coffee" />
+        <img src={Coffee} alt="coffee" />
       </div>
     </div>
   );

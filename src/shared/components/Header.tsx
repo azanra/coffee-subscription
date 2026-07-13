@@ -1,7 +1,7 @@
 import { Link } from "react-router";
-import CoffeeLogo from "../../../assets/shared/desktop/logo.svg";
-import HamburgerLogo from "../../../assets/shared/mobile/icon-hamburger.svg";
-import useIsMobileScreen from "../../../shared/hooks/useIsMobileScreen";
+import CoffeeLogo from "../../assets/shared/desktop/logo.svg";
+import HamburgerLogo from "../../assets/shared/mobile/icon-hamburger.svg";
+import useIsMobileScreen from "../hooks/useIsMobileScreen";
 
 const Header = () => {
   const { isMobileScreen } = useIsMobileScreen();

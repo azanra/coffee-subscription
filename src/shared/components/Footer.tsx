@@ -1,7 +1,7 @@
-import coffee from "../../../assets/shared/desktop/logo.svg";
-import facebook from "../../../assets/shared/desktop/icon-facebook.svg";
-import twitter from "../../../assets/shared/desktop/icon-twitter.svg";
-import instagram from "../../../assets/shared/desktop/icon-instagram.svg";
+import Coffee from "../../assets/shared/desktop/logo.svg";
+import Facebook from "../../assets/shared/desktop/icon-facebook.svg";
+import Twitter from "../../assets/shared/desktop/icon-twitter.svg";
+import Instagram from "../../assets/shared/desktop/icon-instagram.svg";
 import { Link } from "react-router";
 
 const Footer = () => {
@@ -10,11 +10,11 @@ const Footer = () => {
     { to: "/about", text: "about us" },
     { to: "/plan", text: "create your plan" },
   ];
-  const socialMediaList = [facebook, twitter, instagram];
+  const socialMediaList = [Facebook, Twitter, Instagram];
   return (
     <div>
       <div>
-        <img src={coffee} alt="coffee" />
+        <img src={Coffee} alt="coffee" />
       </div>
       <div>
         {navList.map((list) => {

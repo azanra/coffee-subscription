@@ -1,10 +1,10 @@
-import PageWrapper from "../shared/components/PageWrapper";
-import ChooseUs from "./components/home/ChooseUs";
-import Collection from "./components/home/Collection";
-import CreatePlan from "./components/home/CreatePlan";
-import Footer from "./components/shared/Footer";
-import Header from "./components/shared/Header";
-import Work from "./components/shared/Work";
+import Footer from "../../shared/components/Footer";
+import Header from "../../shared/components/Header";
+import PageWrapper from "../../shared/components/PageWrapper";
+import Work from "../../shared/components/Work";
+import ChooseUs from "./components/ChooseUs";
+import Collection from "./components/Collection";
+import CreatePlan from "./components/CreatePlan";
 
 const Home = () => {
   return (

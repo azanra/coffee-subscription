@@ -1,21 +1,21 @@
-import coffee from "../../../assets/home/desktop/icon-coffee-bean.svg";
-import gift from "../../../assets/home/desktop/icon-gift.svg";
-import truck from "../../../assets/home/desktop/icon-truck.svg";
+import Coffee from "../../../assets/home/desktop/icon-coffee-bean.svg";
+import Gift from "../../../assets/home/desktop/icon-gift.svg";
+import Truck from "../../../assets/home/desktop/icon-truck.svg";
 
 const ChooseUs = () => {
   const chooseUsList = [
     {
-      img: coffee,
+      img: Coffee,
       header: "Best quality",
       body: "Discover an endless variety of the world's best artisan coffee from each of our roasters.",
     },
     {
-      img: gift,
+      img: Gift,
       header: "Exclusive benefits",
       body: "Special offers and swag when you subscribe, including 30% off your first shipment.",
     },
     {
-      img: truck,
+      img: Truck,
       header: "Free shipping",
       body: "We cover the cost and coffee is delivered fast. Peak freshness: guaranteed",
     },

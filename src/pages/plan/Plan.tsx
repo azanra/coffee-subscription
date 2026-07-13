@@ -1,8 +1,8 @@
+import Header from "../../shared/components/Header";
 import PageWrapper from "../../shared/components/PageWrapper";
-import CreatePlanBanner from "../components/plan/CreatePlanBanner";
-import CustomizePlan from "../components/plan/CustomizePlan";
-import Header from "../components/shared/Header";
-import Work from "../components/shared/Work";
+import Work from "../../shared/components/Work";
+import CreatePlanBanner from "./components/CreatePlanBanner";
+import CustomizePlan from "./components/CustomizePlan";
 
 const Plan = () => {
   return (

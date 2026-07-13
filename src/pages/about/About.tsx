@@ -1,10 +1,10 @@
+import Footer from "../../shared/components/Footer";
+import Header from "../../shared/components/Header";
 import PageWrapper from "../../shared/components/PageWrapper";
-import AboutUs from "../components/about/AboutUs";
-import Commitment from "../components/about/Commitment";
-import Headquarter from "../components/about/Headquarter";
-import Quality from "../components/about/Quality";
-import Footer from "../components/shared/Footer";
-import Header from "../components/shared/Header";
+import AboutUs from "./components/AboutUs";
+import Commitment from "./components/Commitment";
+import Headquarter from "./components/Headquarter";
+import Quality from "./components/Quality";
 
 const About = () => {
   return (

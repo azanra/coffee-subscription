@@ -1,10 +1,10 @@
-import granEspresso from "../../../assets/home/desktop/image-hero-coffeepress.jpg";
+import GranEspresso from "../../../assets/home/desktop/image-hero-coffeepress.jpg";
 
 const CreatePlan = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${granEspresso})`,
+        backgroundImage: `url(${GranEspresso})`,
       }}
     >
       <div>

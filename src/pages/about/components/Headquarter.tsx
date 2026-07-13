@@ -1,11 +1,11 @@
-import uk from "../../../assets/about/desktop/illustration-uk.svg";
-import canada from "../../../assets/about/desktop/illustration-canada.svg";
-import australia from "../../../assets/about/desktop/illustration-australia.svg";
+import Uk from "../../../assets/about/desktop/illustration-uk.svg";
+import Canada from "../../../assets/about/desktop/illustration-canada.svg";
+import Australia from "../../../assets/about/desktop/illustration-australia.svg";
 
 const Headquarter = () => {
   const headquarterList = [
     {
-      img: uk,
+      img: Uk,
       country: "United Kingdom",
       street: "68 Asfordby Rd",
       city: "Alcaston",
@@ -13,7 +13,7 @@ const Headquarter = () => {
       phoneNumber: "+44 1241 918425",
     },
     {
-      img: canada,
+      img: Canada,
       country: "Canada",
       street: "1528 Eglinton Avenue",
       city: "Toronto",
@@ -21,7 +21,7 @@ const Headquarter = () => {
       phoneNumber: "+1 416 485 2997",
     },
     {
-      img: australia,
+      img: Australia,
       country: "Australia",
       street: "36 Swanston Street",
       city: "Kewell",

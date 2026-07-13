@@ -1,10 +1,10 @@
-import whiteCup from "../../../assets/about/desktop/image-hero-whitecup.jpg";
+import WhiteCup from "../../../assets/about/desktop/image-hero-whitecup.jpg";
 
 const AboutUs = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${whiteCup})`,
+        backgroundImage: `url(${WhiteCup})`,
       }}
     >
       <div>

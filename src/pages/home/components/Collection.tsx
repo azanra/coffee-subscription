@@ -1,27 +1,27 @@
-import gran from "../../../assets/home/desktop/image-gran-espresso.png";
-import planalto from "../../../assets/home/desktop/image-planalto.png";
-import piccolo from "../../../assets/home/desktop/image-piccollo.png";
-import danche from "../../../assets/home/desktop/image-danche.png";
+import Gran from "../../../assets/home/desktop/image-gran-espresso.png";
+import Planalto from "../../../assets/home/desktop/image-planalto.png";
+import Piccolo from "../../../assets/home/desktop/image-piccollo.png";
+import Danche from "../../../assets/home/desktop/image-danche.png";
 
 const Collection = () => {
   const collectionList = [
     {
-      img: gran,
+      img: Gran,
       header: "Gran Espresso",
       body: "Light and flavorful blend with cocoa and black pepper for an intense experience",
     },
     {
-      img: planalto,
+      img: Planalto,
       header: "Planalto",
       body: "Brazilian dark roast with rich and velvety body, and hints of fruits and nuts.",
     },
     {
-      img: piccolo,
+      img: Piccolo,
       header: "Piccolo",
       body: "Mild and smooth blend featuring notes of toasted almond and dried cherry",
     },
     {
-      img: danche,
+      img: Danche,
       header: "Danche",
       body: "Ethiopian hand-harvested blend densely packed with vibrant fruit notes",
     },
