@@ -5,6 +5,7 @@ import CloseLogo from "../../assets/shared/mobile/icon-close.svg";
 import useIsMobileScreen from "../hooks/useIsMobileScreen";
 
 import { useState } from "react";
+import stringUtils from "../utils/stringUtils";
 
 const Header = () => {
   const [isShow, setIsShow] = useState(false);
@@ -49,7 +50,7 @@ const Header = () => {
           {navigationTab.map((nav) => {
             return (
               <Link to={nav.to} key={nav.to}>
-                {nav.text.toUpperCase()}
+                {stringUtils.toTitleCase(nav.text)}
               </Link>
             );
           })}
