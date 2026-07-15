@@ -19,7 +19,11 @@ const Header = () => {
   return (
     <div className="mb-[40px]">
       <div className="flex justify-between items-center">
-        <img src={CoffeeLogo} alt="coffee-logo" />
+        <img
+          src={CoffeeLogo}
+          alt="coffee-logo"
+          className="w-[160px] md:w-[237px]"
+        />
 
         {isMobileScreen ? (
           <img
