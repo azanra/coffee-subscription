@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Fraunces";
+  src:
+    url("../src/assets/fonts/Fraunces-9ptBlack.woff2") format("woff2"),
+    url("../src/assets/fonts/Fraunces-9ptBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --system-font:
+    system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --neutral-900: #343e4c;
+  --neutral-500: #848990;
+
+  font-family: "Fraunces", var(--system-font);
+}
+
+.text-preset-4 {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.text-preset-8 {
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.92px;
+}

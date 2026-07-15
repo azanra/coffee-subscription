@@ -28,7 +28,7 @@ const Header = () => {
             onClick={() => setIsShow(!isShow)}
           />
         ) : (
-          <div className="flex gap-[33px]">
+          <div className="flex gap-[33px] text-(--neutral-500) text-preset-8">
             {navigationTab.map((nav) => {
               return (
                 <Link to={nav.to} key={nav.to}>
@@ -41,7 +41,7 @@ const Header = () => {
       </div>
 
       {isShow && isMobileScreen && (
-        <div className="flex flex-col gap-[32px] text-center px-[82.5px] pt-[80px] pb-[54px]">
+        <div className="flex flex-col gap-[32px] text-center px-[82.5px] pt-[80px] pb-[54px] text-(--neutral-900) text-preset-4">
           {navigationTab.map((nav) => {
             return (
               <Link to={nav.to} key={nav.to}>
