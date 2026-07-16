@@ -8,7 +8,9 @@ const CreatePlanBanner = () => {
       }}
     >
       <div>
-        <h1>Create a plan</h1>
+        <h1 className="text-(--neutral-50) text-preset-1-mobile md:text-preset-1">
+          Create a plan
+        </h1>
         <p>
           Build a subscription plan that best fits your needs. We offer an
           assortment of the best artisan coffees from around the globe delivered

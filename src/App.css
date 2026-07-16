@@ -10,23 +10,50 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Barlow";
+  src:
+    url("../src/assets/fonts/Barlow-Regular.woff2") format("woff2"),
+    url("../src/assets/fonts/Barlow-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --system-font:
     system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --neutral-900: #343e4c;
   --neutral-500: #848990;
+  --neutral-50: #fefcf6;
 
-  font-family: "Fraunces", var(--system-font);
+  font-family: var(--system-font);
 }
 
-.text-preset-4 {
+@utility text-preset-1 {
+  font-family: "Fraunces";
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-1-mobile {
+  font-family: "Fraunces";
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-4 {
+  font-family: "Fraunces";
   font-size: 24px;
   line-height: 150%;
-  letter-spacing: 0;
+  letter-spacing: 0px;
 }
 
-.text-preset-8 {
+@utility text-preset-8 {
+  font-family: "Fraunces";
   font-size: 12px;
   line-height: 130%;
   letter-spacing: 0.92px;
