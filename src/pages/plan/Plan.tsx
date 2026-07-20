@@ -10,7 +10,7 @@ const Plan = () => {
       <Header />
       <div className="flex flex-col gap-[64px] md:gap-[80px] lg:gap-[140px]">
         <CreatePlanBanner />
-        <Work withBtn={false} />
+        <Work />
         <CustomizePlan />
       </div>
     </PageWrapper>

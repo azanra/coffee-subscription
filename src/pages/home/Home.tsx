@@ -13,7 +13,7 @@ const Home = () => {
       <CreatePlan />
       <Collection />
       <ChooseUs />
-      <Work withBtn={true} />
+      <Work />
       <Footer />
     </PageWrapper>
   );
