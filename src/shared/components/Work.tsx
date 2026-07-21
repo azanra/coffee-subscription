@@ -37,7 +37,12 @@ const Work = () => {
         <div className="w-[80%] pl-[16px]">
           <div className="flex justify-between mx-[-16px]">
             {[...Array(3)].map((_, index) => {
-              return <div className="circle" key={index} />;
+              return (
+                <div
+                  className={`circle ${!isPlanPage ? "z-1 bg-(--neutral-50)" : ""}`}
+                  key={index}
+                />
+              );
             })}
           </div>
           <div className="border-t-[1px] relative bottom-[16px] border-(--orange-200)" />
