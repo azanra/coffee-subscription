@@ -1,16 +1,9 @@
 import { useState } from "react";
 import OrderSummaryText from "./OrderSummaryText";
 import SummaryModal from "./SummaryModal";
+import type { IOrder } from "../interfaces/PlanInterface";
 
-export interface Order {
-  preference: string | null;
-  beanType: string | null;
-  quantity: string | null;
-  grindOption: string | null;
-  deliveries: string | null;
-}
-
-const OrderSummary = ({ order }: { order: Order }) => {
+const OrderSummary = ({ order }: { order: IOrder }) => {
   const [isShowCheckoutModal, setIsShowCheckoutModal] = useState(false);
 
   const { preference, beanType, quantity, grindOption, deliveries } = order;
