@@ -4,14 +4,12 @@ import type { IOrder } from "../interfaces/PlanInterface";
 import { QUESTION_LIST } from "../utils/planUtils";
 
 interface ITableOfContent {
-  selectedContent: string;
   setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
   order: IOrder;
   setOrder: React.Dispatch<React.SetStateAction<IOrder>>;
 }
 
 const TableOfContent = ({
-  selectedContent,
   setSelectedContent,
   order,
   setOrder,
@@ -25,8 +23,6 @@ const TableOfContent = ({
             id={list.id}
             question={list.question}
             options={list.options}
-            isCapsules={order.preference === "Capsule"}
-            selectedContent={selectedContent}
             setSelectedContent={setSelectedContent}
             order={order}
             setOrder={setOrder}

@@ -37,7 +37,6 @@ const CustomizePlan = () => {
 
       <div className="flex flex-col lg:max-w-[730px]">
         <TableOfContent
-          selectedContent={selectedContent}
           setSelectedContent={setSelectedContent}
           order={order}
           setOrder={setOrder}

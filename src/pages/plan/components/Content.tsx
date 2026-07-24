@@ -10,8 +10,6 @@ interface IContent {
   id: string;
   question: string;
   options: ITableOfContentOption[];
-  isCapsules: boolean;
-  selectedContent: string;
   setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
   order: IOrder;
   setOrder: React.Dispatch<React.SetStateAction<IOrder>>;
@@ -21,8 +19,6 @@ const Content = ({
   id,
   question,
   options,
-  isCapsules,
-  selectedContent,
   setSelectedContent,
   order,
   setOrder,
