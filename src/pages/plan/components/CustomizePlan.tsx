@@ -13,14 +13,12 @@ const CustomizePlan = () => {
     grindOption: null,
     deliveries: null,
   });
-
   const [selectedContent, setSelectedContent] = useState("");
 
-  const isCapsules = order.preference === "Capsule";
   console.log({ order, selectedContent });
 
   return (
-    <div className="flex flex-col gap-[64px] lg:flex-row lg:gap-[128px]">
+    <div className="flex flex-col gap-[64px] lg:flex-row lg:justify-around">
       <div className="lg:w-[252px]">
         {QUESTION_LIST.map((list, index) => {
           return (
@@ -36,21 +34,14 @@ const CustomizePlan = () => {
           );
         })}
       </div>
-      <div className="w-[60%]">
-        {QUESTION_LIST.map((list, index) => {
-          return (
-            <TableOfContent
-              key={list.id}
-              list={list}
-              isLastItem={index === QUESTION_LIST.length - 1}
-              isCapsules={isCapsules}
-              selectedContent={selectedContent}
-              setSelectedContent={setSelectedContent}
-              order={order}
-              setOrder={setOrder}
-            />
-          );
-        })}
+
+      <div className="flex flex-col lg:max-w-[730px]">
+        <TableOfContent
+          selectedContent={selectedContent}
+          setSelectedContent={setSelectedContent}
+          order={order}
+          setOrder={setOrder}
+        />
         <OrderSummary order={order} />
       </div>
     </div>

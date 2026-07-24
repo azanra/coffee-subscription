@@ -5,3 +5,8 @@ export interface IOrder {
   grindOption: string | null;
   deliveries: string | null;
 }
+
+export interface ITableOfContentOption {
+  header: string;
+  body: string;
+}

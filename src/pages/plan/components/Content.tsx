@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import QuestionDropdown from "./QuestionDropdown";
-import type { ITableOfContentOption } from "./TableOfContent";
-import type { Order } from "./OrderSummary";
+import type {
+  IOrder,
+  ITableOfContentOption,
+} from "../interfaces/PlanInterface";
+import Arrow from "../../../assets/plan/desktop/icon-arrow.svg";
 
 interface IContent {
   id: string;
@@ -10,8 +13,8 @@ interface IContent {
   isCapsules: boolean;
   selectedContent: string;
   setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
-  order: Order;
-  setOrder: React.Dispatch<React.SetStateAction<Order>>;
+  order: IOrder;
+  setOrder: React.Dispatch<React.SetStateAction<IOrder>>;
 }
 
 const Content = ({
@@ -25,6 +28,7 @@ const Content = ({
   setOrder,
 }: IContent) => {
   const [isShown, setIsShown] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   const handleOrder = (orderOption: string, orderValue: string) => {
     if (orderOption === "preference" && orderValue === "Capsule") {
@@ -43,31 +47,33 @@ const Content = ({
     });
   };
 
-  const isDisabled = isCapsules && id === "grindOption";
-  console.log(order);
+  const handleClick = () => {
+    setIsShown(!isShown);
+    setSelectedContent(id);
+
+    imgRef?.current?.setAttribute(
+      "style",
+      `transform: rotate(${isShown ? 360 : 180}deg)`,
+    );
+  };
 
   return (
-    <div className="cursor-pointer w-full">
-      <button
-        className={`${isDisabled ? "opacity-50" : ""} w-full flex mb-[40px] gap-[32px] items-center justify-between`}
-        disabled={isDisabled}
-        onClick={() => {
-          setIsShown(!isShown);
-          setSelectedContent(id);
-        }}
+    <div className="flex flex-col gap-[24px] md:gap-[32px] lg:gap-[48px]">
+      <div
+        onClick={() => handleClick()}
+        className="flex items-baseline justify-between md:items-center"
       >
-        <h1
-          id={`${id}`}
-          className={`${
-            selectedContent === id
-              ? "underline text-[#2C343E]"
-              : "text-[#83888f]"
-          } text-4xl text-start font-extrabold hover:text-[#2C343E]`}
-        >
-          {question}
-        </h1>
-        <div>+</div>
-      </button>
+        <button>
+          <h1
+            id={`${id}`}
+            className={`text-preset-2-mobile text-(--neutral-500) md:text-preset-2 text-start`}
+          >
+            {question}
+          </h1>
+        </button>
+        <img src={Arrow} ref={imgRef} />
+      </div>
+
       {isShown && (
         <QuestionDropdown
           options={options}
