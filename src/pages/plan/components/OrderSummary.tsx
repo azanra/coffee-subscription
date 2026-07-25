@@ -15,13 +15,12 @@ const OrderSummary = ({ order }: { order: IOrder }) => {
       : grindOption !== null;
 
   return (
-    <div className="mt-[64px]">
-      <div className="bg-[#2c343e] px-[64px] py-[32px] rounded-md mb-[64px]">
-        <h1 className="text-[#ffffff] opacity-[0.5] mb-[8px]">ORDER SUMMARY</h1>
-        <OrderSummaryText
-          customClass="text-white font-extrabold text-2xl"
-          order={order}
-        />
+    <div className="flex flex-col gap-[32px] lg:gap-[48px]">
+      <div className="flex flex-col gap-[8px] bg-(--neutral-900) rounded-(--radius-8) px-[24px] py-[48px] md:px-[48px] lg:px-[64px]">
+        <h1 className="text-preset-7 text-(--neutral-0) opacity-[50%]">
+          ORDER SUMMARY
+        </h1>
+        <OrderSummaryText order={order} />
       </div>
       <div className="flex justify-end">
         <button

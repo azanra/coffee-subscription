@@ -1,12 +1,6 @@
-import type { Order } from "./OrderSummary";
+import type { IOrder } from "../interfaces/PlanInterface";
 
-const OrderSummaryText = ({
-  customClass = "",
-  order,
-}: {
-  customClass?: string;
-  order: Order;
-}) => {
+const OrderSummaryText = ({ order }: { order: IOrder }) => {
   const { preference, beanType, quantity, grindOption, deliveries } = order;
 
   const isCapsules = preference === "Capsule";
@@ -17,13 +11,7 @@ const OrderSummaryText = ({
     return (
       <span>
         {text}{" "}
-        <span
-          className={
-            order
-              ? "text-[#0e8784]"
-              : " inline-block w-[30px] h-[30px] border-b-1 border-dashed border-[#0e8784]"
-          }
-        >{`${order ? order : " "}`}</span>
+        <span className="text-(--teal-600)">{`${order ? order : "_____"}`}</span>
       </span>
     );
   };
@@ -38,11 +26,11 @@ const OrderSummaryText = ({
   const getDeliveries = getOrderSummary(deliveries);
 
   return (
-    <p className={customClass}>
-      "I drink my coffee {getPreference}, with a {getBeanType} type of bean.{" "}
+    <p className="text-preset-4 text-(--neutral-0)">
+      “I drink my coffee {getPreference}, with a {getBeanType} type of bean.{" "}
       {getQuantity} {isWithGroundAla} {getGrindOption}, sent to me{" "}
       {getDeliveries}
-      ."
+      .”
     </p>
   );
 };

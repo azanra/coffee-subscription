@@ -35,7 +35,7 @@ const CustomizePlan = () => {
         })}
       </div>
 
-      <div className="flex flex-col lg:max-w-[730px]">
+      <div className="flex flex-col lg:max-w-[730px] gap-[64px] lg:gap-[80px]">
         <TableOfContent
           setSelectedContent={setSelectedContent}
           order={order}
