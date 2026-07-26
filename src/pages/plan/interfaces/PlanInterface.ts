@@ -10,3 +10,8 @@ export interface ITableOfContentOption {
   header: string;
   body: string;
 }
+
+export interface IShownSection {
+  id: keyof IOrder;
+  isShown: boolean;
+}

@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import QuestionDropdown from "./QuestionDropdown";
 import type {
   IOrder,
+  IShownSection,
   ITableOfContentOption,
 } from "../interfaces/PlanInterface";
 import Arrow from "../../../assets/plan/desktop/icon-arrow.svg";
@@ -13,6 +14,8 @@ interface IContent {
   setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
   order: IOrder;
   setOrder: React.Dispatch<React.SetStateAction<IOrder>>;
+  shownSection: IShownSection[];
+  setIsShownSection: React.Dispatch<React.SetStateAction<IShownSection[]>>;
 }
 
 const Content = ({
@@ -22,17 +25,27 @@ const Content = ({
   setSelectedContent,
   order,
   setOrder,
+  shownSection,
+  setIsShownSection,
 }: IContent) => {
-  const [isShown, setIsShown] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
+  const isShown = !!shownSection.find((section) => section.id === id)?.isShown;
+
   const handleOrder = (orderOption: string, orderValue: string) => {
+    // Grind option can't be selected with capsules as preference
+    // Close grind option when capsules is preference
     if (orderOption === "preference" && orderValue === "Capsule") {
       setOrder({
         ...order,
         grindOption: null,
         [orderOption]: orderValue,
       });
+
+      const currentShownSection = shownSection.map((section) =>
+        section.id === "grindOption" ? { ...section, isShown: false } : section,
+      );
+      setIsShownSection(currentShownSection);
 
       return;
     }
@@ -44,7 +57,13 @@ const Content = ({
   };
 
   const handleClick = () => {
-    setIsShown(!isShown);
+    // Grind option can't be selected with capsules as preference
+    if (order.preference === "Capsule" && id === "grindOption") return;
+
+    const currentShownSection = shownSection.map((section) =>
+      section.id === id ? { ...section, isShown: !section.isShown } : section,
+    );
+    setIsShownSection(currentShownSection);
     setSelectedContent(id);
 
     imgRef?.current?.setAttribute(
