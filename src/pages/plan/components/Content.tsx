@@ -31,6 +31,7 @@ const Content = ({
   const imgRef = useRef<HTMLImageElement>(null);
 
   const isShown = !!shownSection.find((section) => section.id === id)?.isShown;
+  const isDisabled = order.preference === "Capsule" && id === "grindOption";
 
   const handleOrder = (orderOption: string, orderValue: string) => {
     // Grind option can't be selected with capsules as preference
@@ -58,7 +59,7 @@ const Content = ({
 
   const handleClick = () => {
     // Grind option can't be selected with capsules as preference
-    if (order.preference === "Capsule" && id === "grindOption") return;
+    if (isDisabled) return;
 
     const currentShownSection = shownSection.map((section) =>
       section.id === id ? { ...section, isShown: !section.isShown } : section,
@@ -86,7 +87,7 @@ const Content = ({
             {question}
           </h1>
         </button>
-        <img src={Arrow} ref={imgRef} />
+        {!isDisabled && <img src={Arrow} ref={imgRef} />}
       </div>
 
       {isShown && (
