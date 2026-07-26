@@ -1,9 +1,15 @@
+type IPreference = "Capsule" | "Filter" | "Espresso";
+type IBeanType = "Single origin" | "Decaf" | "Blended";
+type IQuantity = "250g" | "500g" | "1000g";
+type IGrindOption = "Wholeean" | "Filter" | "Cafetiére";
+type IDeliveries = "Every week" | "Every 2 weeks" | "Every month";
+
 export interface IOrder {
-  preference: string | null;
-  beanType: string | null;
-  quantity: string | null;
-  grindOption: string | null;
-  deliveries: string | null;
+  preference: IPreference | null;
+  beanType: IBeanType | null;
+  quantity: IQuantity | null;
+  grindOption: IGrindOption | null;
+  deliveries: IDeliveries | null;
 }
 
 export interface ITableOfContentOption {
