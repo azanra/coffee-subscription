@@ -14,6 +14,8 @@ const OrderSummary = ({ order }: { order: IOrder }) => {
       ? isCapsules
       : grindOption !== null;
 
+  console.log({ isOrderCompleted });
+
   return (
     <div className="flex flex-col gap-[32px] lg:gap-[48px]">
       <div className="flex flex-col gap-[8px] bg-(--neutral-900) rounded-(--radius-8) px-[24px] py-[48px] md:px-[48px] lg:px-[64px]">
@@ -24,7 +26,7 @@ const OrderSummary = ({ order }: { order: IOrder }) => {
       </div>
       <div className="flex justify-end">
         <button
-          className="bg-[#0e8784] text-white font-bold px-[16px] py-[8px] rounded-md disabled:bg-[#e2dedb]"
+          className="text-preset-5 bg-(--teal-600) disabled:bg-(--neutral-200) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6)"
           disabled={!isOrderCompleted}
           onClick={() => setIsShowCheckoutModal(true)}
         >
