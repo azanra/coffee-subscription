@@ -4,8 +4,6 @@ const OrderSummaryText = ({ order }: { order: IOrder }) => {
   const { preference, beanType, quantity, grindOption, deliveries } = order;
 
   const isCapsules = preference === "Capsule";
-  const isWholeBean = grindOption === "Wholebean";
-  const isWithGroundAla = !isCapsules && !isWholeBean ? "ground ala" : "";
 
   const getOrderSummary = (order: string | null, text: string = "") => {
     return (
@@ -22,14 +20,16 @@ const OrderSummaryText = ({ order }: { order: IOrder }) => {
   );
   const getBeanType = getOrderSummary(beanType);
   const getQuantity = getOrderSummary(quantity);
-  const getGrindOption = !isCapsules ? getOrderSummary(grindOption) : null;
+  const getGrindOption = getOrderSummary(grindOption);
   const getDeliveries = getOrderSummary(deliveries);
+
+  console.log({ order, isCapsules, preference });
 
   return (
     <p className="text-preset-4 text-(--neutral-0)">
       “I drink my coffee {getPreference}, with a {getBeanType} type of bean.{" "}
-      {getQuantity} {isWithGroundAla} {getGrindOption}, sent to me{" "}
-      {getDeliveries}
+      {getQuantity} {grindOption === "Cafetiére" && "ground ala"}{" "}
+      {!isCapsules && getGrindOption}, sent to me {getDeliveries}
       .”
     </p>
   );
