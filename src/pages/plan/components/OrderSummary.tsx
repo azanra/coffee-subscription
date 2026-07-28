@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useRef } from "react";
 import OrderSummaryText from "./OrderSummaryText";
 import SummaryModal from "./SummaryModal";
 import type { IOrder } from "../interfaces/PlanInterface";
 
 const OrderSummary = ({ order }: { order: IOrder }) => {
-  const [isShowCheckoutModal, setIsShowCheckoutModal] = useState(false);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   const { preference, beanType, quantity, grindOption, deliveries } = order;
   const isCapsules = order.preference === "Capsule";
@@ -28,16 +28,15 @@ const OrderSummary = ({ order }: { order: IOrder }) => {
         <button
           className="text-preset-5 bg-(--teal-600) disabled:bg-(--neutral-200) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6)"
           disabled={!isOrderCompleted}
-          onClick={() => setIsShowCheckoutModal(true)}
+          onClick={() => {
+            dialogRef.current?.showModal();
+          }}
         >
           Create my plan!
         </button>
       </div>
-      <SummaryModal
-        order={order}
-        isShowCheckoutModal={isShowCheckoutModal}
-        setIsShowCheckoutModal={setIsShowCheckoutModal}
-      />
+
+      <SummaryModal dialogRef={dialogRef} order={order} />
     </div>
   );
 };

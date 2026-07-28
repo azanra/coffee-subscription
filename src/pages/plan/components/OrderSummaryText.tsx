@@ -1,6 +1,12 @@
 import type { IOrder } from "../interfaces/PlanInterface";
 
-const OrderSummaryText = ({ order }: { order: IOrder }) => {
+const OrderSummaryText = ({
+  order,
+  isModal = false,
+}: {
+  order: IOrder;
+  isModal?: boolean;
+}) => {
   const { preference, beanType, quantity, grindOption, deliveries } = order;
 
   const isCapsules = preference === "Capsule";
@@ -26,7 +32,9 @@ const OrderSummaryText = ({ order }: { order: IOrder }) => {
   console.log({ order, isCapsules, preference });
 
   return (
-    <p className="text-preset-4 text-(--neutral-0)">
+    <p
+      className={`text-preset-4 ${isModal ? "text-(--neutral-500)" : "text-(--neutral-0)"} `}
+    >
       “I drink my coffee {getPreference}, with a {getBeanType} type of bean.{" "}
       {getQuantity} {grindOption === "Cafetiére" && "ground ala"}{" "}
       {!isCapsules && getGrindOption}, sent to me {getDeliveries}
