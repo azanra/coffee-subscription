@@ -135,3 +135,10 @@
   border-radius: 50%;
   border: 2px solid var(--teal-600);
 }
+
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

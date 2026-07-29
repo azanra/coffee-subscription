@@ -17,7 +17,7 @@ const SummaryModal = ({
   return (
     <dialog
       ref={dialogRef}
-      className="backdrop:bg-(--neutral-900) backdrop:opacity-[70%] rounded-(--radius-8) max-w-[311px] md:max-w-[540px]"
+      className="dialog backdrop:bg-(--neutral-900) backdrop:opacity-[70%] rounded-(--radius-8) min-w-[311px] md:max-w-[540px]"
     >
       <h1 className="text-preset-2-mobile md:text-preset-2  px-[16px] py-[24px] md:px-[48px] md:py-[44px] bg-(--neutral-900) text-(--neutral-0)">
         Order Summary
