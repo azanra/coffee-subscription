@@ -2,8 +2,9 @@ import { useState } from "react";
 import Index from "./Index";
 import TableOfContent from "./TableOfContent";
 import OrderSummary from "./OrderSummary";
-import { QUESTION_LIST } from "../utils/planUtils";
+
 import type { IOrder } from "../interfaces/PlanInterface";
+import { QUESTION_LIST } from "../constants/planConst";
 
 const CustomizePlan = () => {
   const [order, setOrder] = useState<IOrder>({

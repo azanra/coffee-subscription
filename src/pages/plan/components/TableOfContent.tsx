@@ -1,8 +1,9 @@
 import type React from "react";
 import Content from "./Content";
 import type { IOrder, IShownSection } from "../interfaces/PlanInterface";
-import { QUESTION_LIST } from "../utils/planUtils";
+
 import { useState } from "react";
+import { QUESTION_LIST } from "../constants/planConst";
 
 interface ITableOfContent {
   setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
