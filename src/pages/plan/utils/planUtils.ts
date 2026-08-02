@@ -116,7 +116,11 @@ const shipmentPrice = {
   },
 };
 
-console.log({ shipmentPrice });
+const priceMultiplier = {
+  ["Every week"]: 4,
+  ["Every 2 weeks"]: 2,
+  ["Every month"]: 1,
+};
 
 const getCurrentPrice = (
   quantity: IQuantity | null,
@@ -132,4 +136,14 @@ const getCurrentPrice = (
   return body.replace("[current_price]", `${totalPrice.toFixed(2)}`);
 };
 
-export { QUESTION_LIST, getCurrentPrice };
+const getFinalPrice = (
+  quantity: IQuantity | null,
+  deliveries: IDeliveries | null,
+) => {
+  if (!quantity || !deliveries) return;
+
+  const currentPrice = shipmentPrice[quantity][deliveries];
+  return (currentPrice * priceMultiplier[deliveries]).toFixed(2);
+};
+
+export { QUESTION_LIST, getCurrentPrice, getFinalPrice };

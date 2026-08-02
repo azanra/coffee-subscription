@@ -1,4 +1,5 @@
 import type { IOrder } from "../interfaces/PlanInterface";
+import { getFinalPrice } from "../utils/planUtils";
 import OrderSummaryText from "./OrderSummaryText";
 
 import React from "react";
@@ -34,7 +35,9 @@ const SummaryModal = ({
         </div>
 
         <div className="flex flex-col flex-col md:flex-row md:justify-between gap-[16px]">
-          <p className="text-preset-3 text-(--neutral-900)">Price</p>
+          <p className="text-preset-3 text-(--neutral-900)">
+            ${getFinalPrice(order.quantity, order.deliveries)}
+          </p>
           <button
             onClick={() => handleCheckout()}
             className="text-preset-5 bg-(--teal-600) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6)"
