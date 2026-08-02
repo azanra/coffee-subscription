@@ -1,4 +1,6 @@
-export const QUESTION_LIST = [
+import type { IDeliveries, IQuantity } from "../interfaces/PlanInterface";
+
+const QUESTION_LIST = [
   {
     id: "preference",
     name: "Preferences",
@@ -82,16 +84,52 @@ export const QUESTION_LIST = [
     options: [
       {
         header: "Every week",
-        body: "$7.20 per shipment. Includes free first-class shipping.",
+        body: "$[current_price] per shipment. Includes free first-class shipping.",
       },
       {
         header: "Every 2 weeks",
-        body: "$9.60 per shipment. Includes free priority shipping.",
+        body: "$[current_price] per shipment. Includes free priority shipping.",
       },
       {
         header: "Every month",
-        body: "$12.00 per shipment. Includes free priority shipping.",
+        body: "$[current_price] per shipment. Includes free priority shipping.",
       },
     ],
   },
 ];
+
+const shipmentPrice = {
+  ["250g"]: {
+    ["Every week"]: 7.2,
+    ["Every 2 weeks"]: 9.6,
+    ["Every month"]: 12.0,
+  },
+  ["500g"]: {
+    ["Every week"]: 13.0,
+    ["Every 2 weeks"]: 17.5,
+    ["Every month"]: 22.0,
+  },
+  ["1000g"]: {
+    ["Every week"]: 22.0,
+    ["Every 2 weeks"]: 32.0,
+    ["Every month"]: 42.0,
+  },
+};
+
+console.log({ shipmentPrice });
+
+const getCurrentPrice = (
+  quantity: IQuantity | null,
+  deliveries: IDeliveries | null,
+  body: string,
+) => {
+  if (!quantity || !deliveries)
+    return body.replace("$[current_price]", "Price");
+
+  const currentPrice = shipmentPrice[quantity];
+  const totalPrice = currentPrice[deliveries];
+
+  return body.replace("[current_price]", `${totalPrice.toFixed(2)}`);
+};
+
+export { QUESTION_LIST, getCurrentPrice };

@@ -29,8 +29,6 @@ const OrderSummaryText = ({
   const getGrindOption = getOrderSummary(grindOption);
   const getDeliveries = getOrderSummary(deliveries);
 
-  console.log({ order, isCapsules, preference });
-
   return (
     <p
       className={`text-preset-4 ${isModal ? "text-(--neutral-500)" : "text-(--neutral-0)"} `}

@@ -14,8 +14,6 @@ const OrderSummary = ({ order }: { order: IOrder }) => {
       ? isCapsules
       : grindOption !== null;
 
-  console.log({ isOrderCompleted });
-
   return (
     <div className="flex flex-col gap-[32px] lg:gap-[48px]">
       <div className="flex flex-col gap-[8px] bg-(--neutral-900) rounded-(--radius-8) px-[24px] py-[48px] md:px-[48px] lg:px-[64px]">

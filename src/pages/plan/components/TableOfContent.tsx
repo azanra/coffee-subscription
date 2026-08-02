@@ -22,7 +22,6 @@ const TableOfContent = ({
     { id: "grindOption", isShown: false },
     { id: "deliveries", isShown: false },
   ]);
-  console.log({ shownSection });
 
   return (
     <div className="flex flex-col gap-[32px] md:gap-[48px] lg:gap-[80px] lg:max-w-[730px]">

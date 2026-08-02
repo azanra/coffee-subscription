@@ -96,6 +96,7 @@ const Content = ({
           orderOption={id}
           order={order}
           handleOrder={handleOrder}
+          id={id}
         />
       )}
     </div>

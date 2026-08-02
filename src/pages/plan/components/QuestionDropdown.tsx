@@ -1,13 +1,17 @@
+import { useMemo } from "react";
 import type {
+  IDeliveries,
   IOrder,
   ITableOfContentOption,
 } from "../interfaces/PlanInterface";
+import { getCurrentPrice } from "../utils/planUtils";
 
 interface IQuestionDropdown {
   options: ITableOfContentOption[];
   orderOption: string;
   order: IOrder;
   handleOrder: (orderOption: string, orderValue: string) => void;
+  id: string;
 }
 
 interface IQuestionList {
@@ -15,6 +19,7 @@ interface IQuestionList {
   orderOption: string;
   order: IOrder;
   handleOrder: (orderOption: string, orderValue: string) => void;
+  id: string;
 }
 
 const QuestionDropdown = ({
@@ -22,6 +27,7 @@ const QuestionDropdown = ({
   orderOption,
   handleOrder,
   order,
+  id,
 }: IQuestionDropdown) => {
   return (
     <div className="flex flex-col md:flex-row gap-[16px] md:gap-[24px]">
@@ -33,6 +39,7 @@ const QuestionDropdown = ({
             orderOption={orderOption}
             handleOrder={handleOrder}
             order={order}
+            id={id}
           />
         );
       })}
@@ -45,9 +52,17 @@ const QuestionList = ({
   orderOption,
   handleOrder,
   order,
+  id,
 }: IQuestionList) => {
   const { header, body } = option;
   const isSelected = order[orderOption as keyof IOrder] === header;
+
+  const bodyContent = () => {
+    return id === "deliveries"
+      ? getCurrentPrice(order.quantity, header as IDeliveries, body)
+      : body;
+  };
+
   return (
     <div
       onClick={() => handleOrder(orderOption, header)}
@@ -61,7 +76,7 @@ const QuestionList = ({
       <p
         className={`text-preset-6 ${isSelected ? "text-(--neutral-50)" : "text-(--neutral-900)"}`}
       >
-        {body}
+        {bodyContent()}
       </p>
     </div>
   );

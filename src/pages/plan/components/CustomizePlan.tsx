@@ -15,8 +15,6 @@ const CustomizePlan = () => {
   });
   const [selectedContent, setSelectedContent] = useState("");
 
-  console.log({ order, selectedContent });
-
   return (
     <div className="flex flex-col gap-[64px] lg:flex-row lg:justify-around">
       <div className="lg:w-[252px]">
