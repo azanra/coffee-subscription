@@ -22,7 +22,7 @@ const getFinalPrice = (
   if (!quantity || !deliveries) return;
 
   const currentPrice = SHIPMENT_PRICE[quantity][deliveries];
-  return (currentPrice * PRICE_MULTIPLIER[deliveries]).toFixed(2);
+  return `${(currentPrice * PRICE_MULTIPLIER[deliveries]).toFixed(2)} / mo`;
 };
 
 export { getCurrentPrice, getFinalPrice };
