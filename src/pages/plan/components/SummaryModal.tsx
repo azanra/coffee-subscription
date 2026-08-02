@@ -1,3 +1,4 @@
+import { INITIAL_ORDER } from "../constants/planConst";
 import type { IOrder } from "../interfaces/PlanInterface";
 import { getFinalPrice } from "../utils/planUtils";
 import OrderSummaryText from "./OrderSummaryText";
@@ -7,12 +8,15 @@ import React from "react";
 const SummaryModal = ({
   dialogRef,
   order,
+  setOrder,
 }: {
   dialogRef: React.RefObject<HTMLDialogElement | null>;
   order: IOrder;
+  setOrder: React.Dispatch<React.SetStateAction<IOrder>>;
 }) => {
   const handleCheckout = () => {
     dialogRef.current?.close();
+    setOrder(INITIAL_ORDER);
   };
 
   return (

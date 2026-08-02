@@ -3,7 +3,13 @@ import OrderSummaryText from "./OrderSummaryText";
 import SummaryModal from "./SummaryModal";
 import type { IOrder } from "../interfaces/PlanInterface";
 
-const OrderSummary = ({ order }: { order: IOrder }) => {
+const OrderSummary = ({
+  order,
+  setOrder,
+}: {
+  order: IOrder;
+  setOrder: React.Dispatch<React.SetStateAction<IOrder>>;
+}) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const { preference, beanType, quantity, grindOption, deliveries } = order;
@@ -34,7 +40,7 @@ const OrderSummary = ({ order }: { order: IOrder }) => {
         </button>
       </div>
 
-      <SummaryModal dialogRef={dialogRef} order={order} />
+      <SummaryModal dialogRef={dialogRef} order={order} setOrder={setOrder} />
     </div>
   );
 };

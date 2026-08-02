@@ -4,16 +4,10 @@ import TableOfContent from "./TableOfContent";
 import OrderSummary from "./OrderSummary";
 
 import type { IOrder } from "../interfaces/PlanInterface";
-import { QUESTION_LIST } from "../constants/planConst";
+import { INITIAL_ORDER, QUESTION_LIST } from "../constants/planConst";
 
 const CustomizePlan = () => {
-  const [order, setOrder] = useState<IOrder>({
-    preference: null,
-    beanType: null,
-    quantity: null,
-    grindOption: null,
-    deliveries: null,
-  });
+  const [order, setOrder] = useState<IOrder>(INITIAL_ORDER);
   const [selectedContent, setSelectedContent] = useState("");
 
   return (
@@ -40,7 +34,7 @@ const CustomizePlan = () => {
           order={order}
           setOrder={setOrder}
         />
-        <OrderSummary order={order} />
+        <OrderSummary order={order} setOrder={setOrder} />
       </div>
     </div>
   );

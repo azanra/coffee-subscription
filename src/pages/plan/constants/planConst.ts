@@ -96,6 +96,14 @@ const QUESTION_LIST = [
   },
 ];
 
+const INITIAL_ORDER = {
+  preference: null,
+  beanType: null,
+  quantity: null,
+  grindOption: null,
+  deliveries: null,
+};
+
 const SHIPMENT_PRICE = {
   ["250g"]: {
     ["Every week"]: 7.2,
@@ -120,4 +128,4 @@ const PRICE_MULTIPLIER = {
   ["Every month"]: 1,
 };
 
-export { QUESTION_LIST, SHIPMENT_PRICE, PRICE_MULTIPLIER };
+export { QUESTION_LIST, INITIAL_ORDER, SHIPMENT_PRICE, PRICE_MULTIPLIER };
