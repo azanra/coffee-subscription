@@ -63,6 +63,13 @@
   letter-spacing: 0px;
 }
 
+@utility text-preset-2-tablet {
+  font-family: "Fraunces";
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: 0px;
+}
+
 @utility text-preset-2-mobile {
   font-family: "Fraunces";
   font-size: 28px;
@@ -126,6 +133,23 @@
 @media (min-width: 1024px) {
   .plan-banner-img {
     background-image: url("../src/assets/plan/desktop/image-hero-blackcup.jpg");
+  }
+}
+
+.about-us-img {
+  background-image: url(../src/assets/about/mobile/image-hero-whitecup.jpg);
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .about-us-img {
+    background-image: url(../src//assets//about/tablet/image-hero-whitecup.jpg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-us-img {
+    background-image: url(../src/assets/about/desktop/image-hero-whitecup.jpg);
   }
 }
 
