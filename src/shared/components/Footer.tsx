@@ -1,4 +1,4 @@
-import Coffee from "../../assets/shared/desktop/logo.svg";
+import CoffeeIcon from "../../assets/shared/desktop/logo.svg?react";
 import Facebook from "../../assets/shared/desktop/icon-facebook.svg";
 import Twitter from "../../assets/shared/desktop/icon-twitter.svg";
 import Instagram from "../../assets/shared/desktop/icon-instagram.svg";
@@ -11,21 +11,28 @@ const Footer = () => {
     { to: "/plan", text: "create your plan" },
   ];
   const socialMediaList = [Facebook, Twitter, Instagram];
+
   return (
-    <div>
-      <div>
-        <img src={Coffee} alt="coffee" />
+    <div className="bg-(--neutral-900) p-[32px] flex flex-col gap-[24px] items-center lg:flex-row lg:px-[80px] lg:py-[48px] lg:justify-between">
+      <div className="flex items-center justify-center">
+        <CoffeeIcon className="coffee-icon-logo" />
       </div>
-      <div>
+
+      <div className="flex items-center justify-center gap-[32px]">
         {navList.map((list) => {
           return (
-            <Link replace key={list.text} to={list.to}>
+            <Link
+              replace
+              key={list.text}
+              to={list.to}
+              className="text-preset-8 text-(--neutral-500)"
+            >
               {list.text}
             </Link>
           );
         })}
       </div>
-      <div>
+      <div className="flex items-center justify-center gap-[24px]">
         {socialMediaList.map((list, index) => {
           return (
             <a key={index} href="">

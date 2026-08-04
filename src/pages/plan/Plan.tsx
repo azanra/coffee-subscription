@@ -1,3 +1,4 @@
+import Footer from "../../shared/components/Footer";
 import Header from "../../shared/components/Header";
 import PageWrapper from "../../shared/components/PageWrapper";
 import Work from "../../shared/components/Work";
@@ -12,6 +13,7 @@ const Plan = () => {
         <CreatePlanBanner />
         <Work />
         <CustomizePlan />
+        <Footer />
       </div>
     </PageWrapper>
   );
