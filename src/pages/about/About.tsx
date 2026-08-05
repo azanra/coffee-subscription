@@ -10,11 +10,13 @@ const About = () => {
   return (
     <PageWrapper>
       <Header />
-      <AboutUs />
-      <Commitment />
-      <Quality />
-      <Headquarter />
-      <Footer />
+      <div className="flex flex-col gap-[80px] md:gap-[96px] lg:gap-[140px]">
+        <AboutUs />
+        <Commitment />
+        <Quality />
+        <Headquarter />
+        <Footer />
+      </div>
     </PageWrapper>
   );
 };

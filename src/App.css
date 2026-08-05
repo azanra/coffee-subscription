@@ -153,6 +153,23 @@
   }
 }
 
+.commitment-img {
+  background-image: url("../src/assets/about/mobile/image-commitment.jpg");
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .commitment-img {
+    background-image: url("../src/assets/about/tablet/image-commitment.jpg");
+  }
+}
+
+@media (min-width: 1024px) {
+  .commitment-img {
+    background-image: url("../src/assets/about/desktop/image-commitment.jpg");
+  }
+}
+
 .circle {
   width: 31px;
   height: 31px;

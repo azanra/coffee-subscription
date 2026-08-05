@@ -1,14 +1,12 @@
-import Brewing from "../../../assets/about/desktop/image-commitment.jpg";
-
 const Commitment = () => {
   return (
-    <div>
-      <div>
-        <img src={Brewing} alt="brewing" />
-      </div>
-      <div>
-        <h1>Our commitment</h1>
-        <p>
+    <div className="flex flex-col gap-[48px] lg:gap-[125px] md:flex-row items-center justify-center">
+      <div className="commitment-img w-[343px] h-[400px] md:w-[280px] md:h-[520px] lg:w-[445px] lg:h-[520px] rounded-(--radius-12)" />
+      <div className="flex flex-col gap-[20px] md:gap-[32px] w-[343px] h-[444px] md:w-[376px] lg:w-[540px] lg:h-[340px] md:my-[38px] lg:my-[90px]">
+        <h1 className="text-preset-2-mobile text-(--neutral-900) md:text-preset-2 text-center md:text-start">
+          Our commitment
+        </h1>
+        <p className="text-preset-6 text-(--neutral-900) text-center md:text-start">
           We're built on simple mission and a commitment to doing good along the
           way. We want to make it easy for you to discover and brew the world's
           best coffee at home. It all starts at the source. To locate the
