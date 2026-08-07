@@ -42,6 +42,12 @@
   font-family: var(--system-font);
 }
 
+/* 90 rem is equal to 1440px
+https://stackoverflow.com/a/79605889 */
+@theme {
+  --breakpoint-xxl: 90rem;
+}
+
 @utility text-preset-1 {
   font-family: "Fraunces";
   font-size: 72px;
@@ -130,7 +136,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .plan-banner-img {
     background-image: url("../src/assets/plan/desktop/image-hero-blackcup.jpg");
   }
@@ -147,7 +153,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .about-us-img {
     background-image: url(../src/assets/about/desktop/image-hero-whitecup.jpg);
   }
@@ -164,9 +170,43 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .commitment-img {
     background-image: url("../src/assets/about/desktop/image-commitment.jpg");
+  }
+}
+
+.quality-img {
+  background-image: url("../src/assets/about/mobile/image-quality.jpg");
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .quality-img {
+    background-image: url("../src/assets/about/tablet/image-quality.jpg");
+  }
+}
+
+@media (min-width: 1440px) {
+  .quality-img {
+    background-image: url("../src/assets/about/desktop/image-quality.jpg");
+  }
+}
+
+.quality-bg-img {
+  background-image: url("../src/assets/about/mobile/bg-quality.png");
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .quality-bg-img {
+    background-image: url("../src/assets/about/tablet/bg-quality.png");
+  }
+}
+
+@media (min-width: 1440px) {
+  .quality-bg-img {
+    background-image: url("../src/assets/about/desktop/bg-quality.png");
   }
 }
 

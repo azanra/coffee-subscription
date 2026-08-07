@@ -25,10 +25,10 @@ const Work = () => {
 
   return (
     <div
-      className={`${isPlanPage ? "bg-(--neutral-900)" : ""} px-[16px] py-[48px] md:px-[32px] md:py-[64px] lg:px-[80px] lg:py-[96px] `}
+      className={`${isPlanPage ? "bg-(--neutral-900)" : ""} px-[16px] py-[48px] md:px-[32px] md:py-[64px] xxl:px-[80px] xxl:py-[96px] `}
     >
       {!isPlanPage && (
-        <div className="mb-[64px] md:mb-[80px] lg:mb-[95px] text-center md:text-start">
+        <div className="mb-[64px] md:mb-[80px] xxl:mb-[95px] text-center md:text-start">
           <h1 className="text-preset-4 text-(--neutral-500)">How it works</h1>
         </div>
       )}
@@ -49,12 +49,12 @@ const Work = () => {
         </div>
       )}
 
-      <div className="flex flex-col gap-[40px] md:flex-row md:gap-[32px] lg:gap-[95px]">
+      <div className="flex flex-col gap-[40px] md:flex-row md:gap-[32px] xxl:gap-[95px]">
         {workList.map((list, index) => {
           return (
             <div
               key={list.header}
-              className={`flex flex-col gap-[24px] lg:gap-[40px] text-center md:text-start ${isPlanPage ? "md:pt-[64px]" : "md:pt-[80px]"}`}
+              className={`flex flex-col gap-[24px] xxl:gap-[40px] text-center md:text-start ${isPlanPage ? "md:pt-[64px]" : "md:pt-[80px]"}`}
             >
               <h1 className="text-preset-1 text-(--orange-200)">
                 0{index + 1}

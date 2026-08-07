@@ -21,8 +21,8 @@ const OrderSummary = ({
       : grindOption !== null;
 
   return (
-    <div className="flex flex-col gap-[32px] lg:gap-[48px]">
-      <div className="flex flex-col gap-[8px] bg-(--neutral-900) rounded-(--radius-8) px-[24px] py-[48px] md:px-[48px] lg:px-[64px]">
+    <div className="flex flex-col gap-[32px] xxl:gap-[48px]">
+      <div className="flex flex-col gap-[8px] bg-(--neutral-900) rounded-(--radius-8) px-[24px] py-[48px] md:px-[48px] xxl:px-[64px]">
         <h1 className="text-preset-7 text-(--neutral-0) opacity-[50%]">
           ORDER SUMMARY
         </h1>

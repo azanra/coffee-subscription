@@ -1,8 +1,8 @@
 const Commitment = () => {
   return (
-    <div className="flex flex-col gap-[48px] lg:gap-[125px] md:flex-row items-center justify-center">
-      <div className="commitment-img w-[343px] h-[400px] md:w-[280px] md:h-[520px] lg:w-[445px] lg:h-[520px] rounded-(--radius-12)" />
-      <div className="flex flex-col gap-[20px] md:gap-[32px] w-[343px] h-[444px] md:w-[376px] lg:w-[540px] lg:h-[340px] md:my-[38px] lg:my-[90px]">
+    <div className="flex flex-col gap-[48px] xxl:gap-[125px] md:flex-row items-center justify-center">
+      <div className="commitment-img w-[343px] h-[400px] md:w-[280px] md:h-[520px] xxl:w-[445px] xxl:h-[520px] rounded-(--radius-12)" />
+      <div className="flex flex-col gap-[20px] md:gap-[32px] w-[343px] h-[444px] md:w-[376px] xxl:w-[540px] xxl:h-[340px] md:my-[38px] xxl:my-[90px]">
         <h1 className="text-preset-2-mobile text-(--neutral-900) md:text-preset-2 text-center md:text-start">
           Our commitment
         </h1>

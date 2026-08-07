@@ -4,7 +4,7 @@ const CreatePlanBanner = () => {
   // hence it will adjusted to 505px to match the wrap at figma files
 
   return (
-    <div className="plan-banner-img h-[324px] md:h-[462px] px-[24px] py-[80px] md:px-[48px] md:py-[140px] lg:px-[80px] rounded-(--radius-12)">
+    <div className="plan-banner-img h-[324px] md:h-[462px] px-[24px] py-[80px] md:px-[48px] md:py-[140px] xxl:px-[80px] rounded-(--radius-12)">
       <div className="flex flex-col gap-[20px] md:gap-[32px] w-[296px] h-[164px] md:w-[505px] md:h-[182px]">
         <h1 className="text-(--neutral-50) text-preset-1-mobile md:text-preset-1 text-(--neutral-50)">
           Create a plan

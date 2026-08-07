@@ -74,7 +74,7 @@ const Content = ({
   };
 
   return (
-    <div className="flex flex-col gap-[24px] md:gap-[32px] lg:gap-[48px]">
+    <div className="flex flex-col gap-[24px] md:gap-[32px] xxl:gap-[48px]">
       <div
         onClick={() => handleClick()}
         className="flex items-baseline justify-between md:items-center"

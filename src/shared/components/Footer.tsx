@@ -13,7 +13,7 @@ const Footer = () => {
   const socialMediaList = [Facebook, Twitter, Instagram];
 
   return (
-    <div className="bg-(--neutral-900) p-[32px] flex flex-col gap-[24px] items-center lg:flex-row lg:px-[80px] lg:py-[48px] lg:justify-between">
+    <div className="bg-(--neutral-900) p-[32px] flex flex-col gap-[24px] items-center xxl:flex-row xxl:px-[80px] xxl:py-[48px] xxl:justify-between">
       <div className="flex items-center justify-center">
         <CoffeeIcon className="coffee-icon-logo" />
       </div>

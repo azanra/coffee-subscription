@@ -25,7 +25,7 @@ const TableOfContent = ({
   ]);
 
   return (
-    <div className="flex flex-col gap-[32px] md:gap-[48px] lg:gap-[80px] lg:max-w-[730px]">
+    <div className="flex flex-col gap-[32px] md:gap-[48px] xxl:gap-[80px] xxl:max-w-[730px]">
       {QUESTION_LIST.map((list) => {
         return (
           <Content

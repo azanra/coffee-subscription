@@ -11,8 +11,8 @@ const CustomizePlan = () => {
   const [selectedContent, setSelectedContent] = useState("");
 
   return (
-    <div className="flex flex-col gap-[64px] lg:flex-row lg:justify-around">
-      <div className="lg:w-[252px]">
+    <div className="flex flex-col gap-[64px] xxl:flex-row xxl:justify-around">
+      <div className="xxl:w-[252px]">
         {QUESTION_LIST.map((list, index) => {
           return (
             <Index
@@ -28,7 +28,7 @@ const CustomizePlan = () => {
         })}
       </div>
 
-      <div className="flex flex-col lg:max-w-[730px] gap-[64px] lg:gap-[80px]">
+      <div className="flex flex-col xxl:max-w-[730px] gap-[64px] xxl:gap-[80px]">
         <TableOfContent
           setSelectedContent={setSelectedContent}
           order={order}
