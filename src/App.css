@@ -37,6 +37,7 @@
 
   --radius-6: 6px;
   --radius-8: 8px;
+  --radius-10: 10px;
   --radius-12: 12px;
 
   font-family: var(--system-font);
@@ -51,6 +52,13 @@ https://stackoverflow.com/a/79605889 */
 @utility text-preset-1 {
   font-family: "Fraunces";
   font-size: 72px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-1-tablet {
+  font-family: "Fraunces";
+  font-size: 48px;
   line-height: 100%;
   letter-spacing: 0px;
 }
@@ -207,6 +215,23 @@ https://stackoverflow.com/a/79605889 */
 @media (min-width: 1440px) {
   .quality-bg-img {
     background-image: url("../src/assets/about/desktop/bg-quality.png");
+  }
+}
+
+.create-plan-img {
+  background-image: url("../src/assets/home/mobile/image-hero-coffeepress.jpg");
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .create-plan-img {
+    background-image: url("../src/assets/home/tablet/image-hero-coffeepress.jpg");
+  }
+}
+
+@media (min-width: 1440px) {
+  .create-plan-img {
+    background-image: url("../src/assets/home/desktop/image-hero-coffeepress.jpg");
   }
 }
 

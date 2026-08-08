@@ -10,11 +10,13 @@ const Home = () => {
   return (
     <PageWrapper>
       <Header />
-      <CreatePlan />
-      <Collection />
-      <ChooseUs />
-      <Work />
-      <Footer />
+      <div className="flex flex-col gap-[80px] xxl:gap-[140px]">
+        <CreatePlan />
+        <Collection />
+        <ChooseUs />
+        <Work />
+        <Footer />
+      </div>
     </PageWrapper>
   );
 };
