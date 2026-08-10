@@ -35,12 +35,12 @@ const Headquarter = () => {
         Our headquarters
       </h1>
 
-      <div className="flex flex-col md:flex-row md:justify-between xxl:flex-[1_1_0] gap-[24px]">
+      <div className="flex flex-col md:flex-row md:justify-between gap-[24px]">
         {headquarterList.map((item) => {
           return (
             <div
               key={item.country}
-              className="flex flex-col gap-[32px] md:gap-[40px]"
+              className="flex flex-col gap-[32px] md:gap-[40px] xxl:flex-[1_1_0]"
             >
               <div className="flex items-center justify-center">{item.svg}</div>
               <div className="text-center flex flex-col gap-[24px]">
