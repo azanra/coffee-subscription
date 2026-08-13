@@ -36,7 +36,11 @@ const Header = () => {
           <div className="flex gap-[33px] text-(--neutral-500) text-preset-8">
             {navigationTab.map((nav) => {
               return (
-                <Link to={nav.to} key={nav.to}>
+                <Link
+                  to={nav.to}
+                  key={nav.to}
+                  className="hover:text-(--neutral-900)"
+                >
                   {nav.text.toUpperCase()}
                 </Link>
               );

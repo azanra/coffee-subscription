@@ -31,6 +31,7 @@
   --neutral-100: #f4f1eb;
   --neutral-50: #fefcf6;
   --neutral-0: #ffffff;
+  --teal-300: #66d2cf;
   --teal-600: #0e8684;
 
   --orange-200: #fdd6ba;
@@ -271,4 +272,8 @@ https://stackoverflow.com/a/79605889 */
   background-image: linear-gradient(var(--neutral-500), var(--neutral-0));
   color: transparent;
   background-clip: text;
+}
+
+.footer-icon > path:hover {
+  fill: var(--orange-200);
 }

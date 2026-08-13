@@ -15,7 +15,7 @@ const CreatePlan = () => {
       </div>
       <div className="mt-[40px] md:mt-[48px] flex items-center justify-center md:justify-start">
         <Link
-          className="bg-(--teal-600) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6) text-preset-5"
+          className="bg-(--teal-600) hover:bg-(--teal-300) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6) text-preset-5"
           to="/plan"
         >
           Create your plan

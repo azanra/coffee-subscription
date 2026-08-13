@@ -70,7 +70,7 @@ const Work = () => {
       {!isPlanPage && (
         <div className="mt-[40px] md:mt-[64px] flex justify-center md:justify-start">
           <Link
-            className="w-[218px] h-[57px] bg-(--teal-600) text-preset-5 text-(--neutral-50) rounded-(--radius-6) flex items-center justify-center"
+            className="w-[218px] h-[57px] bg-(--teal-600) hover:bg-(--teal-300) text-preset-5 text-(--neutral-50) rounded-(--radius-6) flex items-center justify-center"
             to="/plan"
           >
             Create your plan
