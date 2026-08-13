@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const CreatePlan = () => {
   return (
     <div className="create-plan-img px-[24px] py-[96px] md:px-[48px] xxl:px-[80px] xxl:py-[112px] rounded-(--radius-10)">
@@ -12,9 +14,12 @@ const CreatePlan = () => {
         </p>
       </div>
       <div className="mt-[40px] md:mt-[48px] flex items-center justify-center md:justify-start">
-        <button className="bg-(--teal-600) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6) text-preset-5">
+        <Link
+          className="bg-(--teal-600) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6) text-preset-5"
+          to="/plan"
+        >
           Create your plan
-        </button>
+        </Link>
       </div>
     </div>
   );
