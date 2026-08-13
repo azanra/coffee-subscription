@@ -54,7 +54,7 @@ const Work = () => {
           return (
             <div
               key={list.header}
-              className={`flex flex-col gap-[24px] xxl:gap-[40px] text-center md:text-start ${isPlanPage ? "md:pt-[64px]" : "md:pt-[80px]"}`}
+              className={`flex-[1_1_0px] flex flex-col gap-[24px] xxl:gap-[40px] text-center md:text-start ${isPlanPage ? "md:pt-[64px]" : "md:pt-[80px]"}`}
             >
               <h1 className="text-preset-1 text-(--orange-200)">
                 0{index + 1}
