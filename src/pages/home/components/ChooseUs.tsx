@@ -21,9 +21,9 @@ const ChooseUs = () => {
     },
   ];
   return (
-    <div className="bg-(--neutral-900) rounded-(--radius-12) px-[16px] py-[64px] md:px-[82px]">
+    <div className="bg-(--neutral-900) rounded-(--radius-12) mb-[672px] md:mb-[323px] xxl:mb-[97px]">
       <div className="flex items-center justify-center">
-        <div className="flex flex-col gap-[32px] md:max-w-[540px]">
+        <div className="flex flex-col gap-[32px] md:max-w-[540px] px-[16px] py-[64px] md:px-[82px] xxl:pt-[96px]">
           <h1 className="text-preset-2 text-(--neutral-50) text-center">
             Why choose us?
           </h1>
@@ -35,7 +35,7 @@ const ChooseUs = () => {
           </p>
         </div>
       </div>
-      <div>
+      <div className="relative h-[226px] top-[48px] md:h-[289px] md:top-[16px] xxl:h-[257px] xxl:top-[4px]">
         <div className="flex flex-col gap-[24px] xxl:flex-row xxl:gap-[32px] justify-center items-center">
           {chooseUsList.map((list) => {
             return (
