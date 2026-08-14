@@ -1,0 +1,103 @@
+/* 90 rem is equal to 1440px
+https://stackoverflow.com/a/79605889 */
+@theme {
+  --breakpoint-xxl: 90rem;
+}
+
+@utility text-collection-tablet {
+  font-family: "Fraunces";
+  font-size: 112px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+@utility text-collection {
+  font-family: "Fraunces";
+  font-size: 182px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-1 {
+  font-family: "Fraunces";
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-1-tablet {
+  font-family: "Fraunces";
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-1-mobile {
+  font-family: "Fraunces";
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-2 {
+  font-family: "Fraunces";
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-2-tablet {
+  font-family: "Fraunces";
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-2-mobile {
+  font-family: "Fraunces";
+  font-size: 28px;
+  line-height: 120%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-3 {
+  font-family: "Fraunces";
+  font-size: 32px;
+  line-height: 114%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-4 {
+  font-family: "Fraunces";
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-5 {
+  font-family: "Fraunces";
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-6 {
+  font-family: "Barlow";
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-7 {
+  font-family: "Barlow";
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-8 {
+  font-family: "Fraunces";
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.92px;
+}
