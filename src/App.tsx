@@ -1,8 +1,7 @@
 import "./App.css";
-import Home from "./pages/home/Home";
 
-function App() {
-  return <Home />;
+function App({ children }: { children: React.ReactNode }) {
+  return <div>{children}</div>;
 }
 
 export default App;
