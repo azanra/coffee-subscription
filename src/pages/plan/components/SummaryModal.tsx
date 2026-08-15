@@ -44,7 +44,7 @@ const SummaryModal = ({
           </p>
           <button
             onClick={() => handleCheckout()}
-            className="text-preset-5 bg-(--teal-600) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6)"
+            className="text-preset-5 bg-(--teal-600) hover:bg-(--teal-300) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6)"
           >
             Checkout
           </button>

@@ -39,7 +39,7 @@ const Header = () => {
                 <Link
                   to={nav.to}
                   key={nav.to}
-                  className="hover:text-(--neutral-900)"
+                  className="hover:text-(--neutral-900) focus:outline-(--teal-600) focus:text-(--neutral-900)"
                 >
                   {nav.text.toUpperCase()}
                 </Link>
