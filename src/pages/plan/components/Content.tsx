@@ -74,7 +74,7 @@ const Content = ({
   };
 
   return (
-    <div className="flex flex-col gap-[24px] md:gap-[32px] xxl:gap-[48px]">
+    <div className=" flex flex-col gap-[24px] md:gap-[32px] xxl:gap-[48px]">
       <div
         onClick={() => handleClick()}
         className="flex items-baseline justify-between md:items-center"
@@ -82,12 +82,14 @@ const Content = ({
         <button>
           <h1
             id={`${id}`}
-            className={`text-preset-2-mobile text-(--neutral-500) md:text-preset-2 text-start`}
+            className={` text-preset-2-mobile text-(--neutral-500) md:text-preset-2 text-start ${!isDisabled ? "cursor-pointer" : ""}`}
           >
             {question}
           </h1>
         </button>
-        {!isDisabled && <img src={Arrow} ref={imgRef} />}
+        {!isDisabled && (
+          <img className="cursor-pointer" src={Arrow} ref={imgRef} />
+        )}
       </div>
 
       {isShown && (

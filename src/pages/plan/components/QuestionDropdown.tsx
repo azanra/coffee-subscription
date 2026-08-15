@@ -65,7 +65,7 @@ const QuestionList = ({
   return (
     <div
       onClick={() => handleOrder(orderOption, header)}
-      className={`flex-[1_1_0] flex flex-col gap-[16px] xxl:gap-[24px] p-[20px] xxl:px-[24px] xxl:py-[32px] ${isSelected ? "bg-(--teal-600)" : "bg-(--neutral-100)"} rounded-(--radius-8)`}
+      className={`cursor-pointer hover:bg-(--orange-200) flex-[1_1_0] flex flex-col gap-[16px] xxl:gap-[24px] p-[20px] xxl:px-[24px] xxl:py-[32px] ${isSelected ? "bg-(--teal-600)" : "bg-(--neutral-100)"} rounded-(--radius-8)`}
     >
       <h1
         className={`text-preset-4 ${isSelected ? "text-(--neutral-0)" : "text-(--neutral-900)"}`}

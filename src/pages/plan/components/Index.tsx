@@ -23,17 +23,19 @@ const Index = ({
     setSelectedContent(id);
   };
 
+  const isCurrentlySelected = !isSelected ? "opacity-[40%]" : "";
+
   return (
     <div>
-      <div className={`flex gap-[24px] ${!isSelected ? "opacity-[40%]" : ""}`}>
+      <div className={`flex gap-[24px]`}>
         <p
-          className={`text-preset-4 ${isSelected ? "text-(--teal-600)" : "text-(--neutral-500)"}`}
+          className={`text-preset-4 ${isCurrentlySelected} ${isSelected ? "text-(--teal-600)" : "text-(--neutral-500)"}`}
         >
           0{number}
         </p>
         <p
           onClick={() => handleClick()}
-          className="text-preset-4 text-(--neutral-900)"
+          className={`text-preset-4 text-(--neutral-900) ${isCurrentlySelected} hover:opacity-[100%] cursor-pointer`}
         >
           {name}
         </p>

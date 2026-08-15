@@ -30,7 +30,7 @@ const OrderSummary = ({
       </div>
       <div className="flex justify-end">
         <button
-          className="text-preset-5 bg-(--teal-600) disabled:bg-(--neutral-200) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6)"
+          className="text-preset-5 bg-(--teal-600) hover:bg-(--teal-300) disabled:bg-(--neutral-200) text-(--neutral-50) px-[32px] py-[16px] rounded-(--radius-6)"
           disabled={!isOrderCompleted}
           onClick={() => {
             dialogRef.current?.showModal();
