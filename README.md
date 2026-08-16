@@ -65,7 +65,7 @@ const routes = [
 ];
 ```
 
-After that it will create the route and provide it to route provider so that the children can consume it, im guessing that this is similar to how react context works.z
+After that it will create the route and provide it to route provider so that the children can consume it, im guessing that this is similar to how react context works.
 
 ```js
 const router = createBrowserRouter(routes, {
