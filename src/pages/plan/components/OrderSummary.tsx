@@ -12,13 +12,11 @@ const OrderSummary = ({
 }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
-  const { preference, beanType, quantity, grindOption, deliveries } = order;
   const isCapsules = order.preference === "Capsule";
 
-  const isOrderCompleted =
-    preference && beanType && quantity && deliveries && isCapsules
-      ? isCapsules
-      : grindOption !== null;
+  const isOrderCompleted = Object.keys(order)
+    .filter((option) => (isCapsules ? option !== "grindOption" : option))
+    .every((option) => order[option as keyof IOrder]);
 
   return (
     <div className="flex flex-col gap-[32px] xxl:gap-[48px]">
