@@ -1,10 +1,11 @@
 import { useState } from "react";
-import Index from "./Index";
+
 import TableOfContent from "./TableOfContent";
 import OrderSummary from "./OrderSummary";
 
 import type { IOrder } from "../interfaces/PlanInterface";
 import { INITIAL_ORDER, QUESTION_LIST } from "../constants/planConst";
+import OutlineHeader from "./OutlineHeader";
 
 const CustomizePlan = () => {
   const [order, setOrder] = useState<IOrder>(INITIAL_ORDER);
@@ -15,7 +16,7 @@ const CustomizePlan = () => {
       <div className="xxl:w-[252px]">
         {QUESTION_LIST.map((list, index) => {
           return (
-            <Index
+            <OutlineHeader
               key={list.id}
               number={index + 1}
               id={list.id}

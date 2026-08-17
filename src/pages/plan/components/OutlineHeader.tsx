@@ -1,4 +1,4 @@
-interface IIndex {
+interface IOutlineHeader {
   number: number;
   id: string;
   name: string;
@@ -7,14 +7,14 @@ interface IIndex {
   setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Index = ({
+const OutlineHeader = ({
   number,
   id,
   name,
   isSelected,
   isLast,
   setSelectedContent,
-}: IIndex) => {
+}: IOutlineHeader) => {
   const handleClick = () => {
     const activeElement = document.querySelector(`#${id}`);
     if (!activeElement) return;
@@ -47,4 +47,4 @@ const Index = ({
   );
 };
 
-export default Index;
+export default OutlineHeader;
