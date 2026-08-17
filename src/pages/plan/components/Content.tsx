@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import QuestionDropdown from "./QuestionDropdown";
 import type {
   IOrder,
@@ -28,8 +28,6 @@ const Content = ({
   shownSection,
   setIsShownSection,
 }: IContent) => {
-  const imgRef = useRef<HTMLImageElement>(null);
-
   const isShown = !!shownSection.find((section) => section.id === id)?.isShown;
   const isDisabled = order.preference === "Capsule" && id === "grindOption";
 
@@ -66,11 +64,6 @@ const Content = ({
     );
     setIsShownSection(currentShownSection);
     setSelectedContent(id);
-
-    imgRef?.current?.setAttribute(
-      "style",
-      `transform: rotate(${isShown ? 360 : 180}deg)`,
-    );
   };
 
   return (
@@ -88,7 +81,11 @@ const Content = ({
           </h1>
         </button>
         {!isDisabled && (
-          <img className="cursor-pointer" src={Arrow} ref={imgRef} />
+          <img
+            style={{ transform: `rotate(${isShown ? 360 : 180}deg)` }}
+            className="cursor-pointer"
+            src={Arrow}
+          />
         )}
       </div>
 
