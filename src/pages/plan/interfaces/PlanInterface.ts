@@ -24,10 +24,6 @@ export interface IShownSection {
   isShown: boolean;
 }
 
-export interface IShownSection {
-  id: keyof IOrder;
-  isShown: boolean;
-}
 export interface ICustomizePlanContext {
   order: IOrder;
   setOrder: React.Dispatch<React.SetStateAction<IOrder>>;
