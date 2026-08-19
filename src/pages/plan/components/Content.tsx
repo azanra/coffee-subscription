@@ -1,75 +1,25 @@
-import React from "react";
 import QuestionDropdown from "./QuestionDropdown";
-import type {
-  IOrder,
-  IShownSection,
-  ITableOfContentOption,
-} from "../interfaces/PlanInterface";
+import type { ITableOfContentOption } from "../interfaces/PlanInterface";
 import Arrow from "../../../assets/plan/desktop/icon-arrow.svg";
+import { useCustomizePlanContext } from "../hooks/useCustomizePlanContext";
 
 interface IContent {
   id: string;
   question: string;
   options: ITableOfContentOption[];
-  setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
-  order: IOrder;
-  setOrder: React.Dispatch<React.SetStateAction<IOrder>>;
-  shownSection: IShownSection[];
-  setIsShownSection: React.Dispatch<React.SetStateAction<IShownSection[]>>;
 }
 
-const Content = ({
-  id,
-  question,
-  options,
-  setSelectedContent,
-  order,
-  setOrder,
-  shownSection,
-  setIsShownSection,
-}: IContent) => {
+const Content = ({ id, question, options }: IContent) => {
+  const { shownSection, order, handleQuestionDropdownClick } =
+    useCustomizePlanContext();
+
   const isShown = !!shownSection.find((section) => section.id === id)?.isShown;
   const isDisabled = order.preference === "Capsule" && id === "grindOption";
-
-  const handleOrder = (orderOption: string, orderValue: string) => {
-    // Grind option can't be selected with capsules as preference
-    // Close grind option when capsules is preference
-    if (orderOption === "preference" && orderValue === "Capsule") {
-      setOrder({
-        ...order,
-        grindOption: null,
-        [orderOption]: orderValue,
-      });
-
-      const currentShownSection = shownSection.map((section) =>
-        section.id === "grindOption" ? { ...section, isShown: false } : section,
-      );
-      setIsShownSection(currentShownSection);
-
-      return;
-    }
-
-    setOrder({
-      ...order,
-      [orderOption]: orderValue,
-    });
-  };
-
-  const handleClick = () => {
-    // Grind option can't be selected with capsules as preference
-    if (isDisabled) return;
-
-    const currentShownSection = shownSection.map((section) =>
-      section.id === id ? { ...section, isShown: !section.isShown } : section,
-    );
-    setIsShownSection(currentShownSection);
-    setSelectedContent(id);
-  };
 
   return (
     <div className=" flex flex-col gap-[24px] md:gap-[32px] xxl:gap-[48px]">
       <div
-        onClick={() => handleClick()}
+        onClick={() => handleQuestionDropdownClick(id, isDisabled)}
         className="flex items-baseline justify-between md:items-center"
       >
         <button>
@@ -90,13 +40,7 @@ const Content = ({
       </div>
 
       {isShown && (
-        <QuestionDropdown
-          options={options}
-          orderOption={id}
-          order={order}
-          handleOrder={handleOrder}
-          id={id}
-        />
+        <QuestionDropdown options={options} orderOption={id} id={id} />
       )}
     </div>
   );

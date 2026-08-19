@@ -2,14 +2,10 @@ import { useRef } from "react";
 import OrderSummaryText from "./OrderSummaryText";
 import SummaryModal from "./SummaryModal";
 import type { IOrder } from "../interfaces/PlanInterface";
+import { useCustomizePlanContext } from "../hooks/useCustomizePlanContext";
 
-const OrderSummary = ({
-  order,
-  setOrder,
-}: {
-  order: IOrder;
-  setOrder: React.Dispatch<React.SetStateAction<IOrder>>;
-}) => {
+const OrderSummary = () => {
+  const { order, setOrder } = useCustomizePlanContext();
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const isCapsules = order.preference === "Capsule";

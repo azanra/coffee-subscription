@@ -1,3 +1,5 @@
+import type React from "react";
+
 type IPreference = "Capsule" | "Filter" | "Espresso";
 type IBeanType = "Single origin" | "Decaf" | "Blended";
 export type IQuantity = "250g" | "500g" | "1000g";
@@ -20,4 +22,19 @@ export interface ITableOfContentOption {
 export interface IShownSection {
   id: keyof IOrder;
   isShown: boolean;
+}
+
+export interface IShownSection {
+  id: keyof IOrder;
+  isShown: boolean;
+}
+export interface ICustomizePlanContext {
+  order: IOrder;
+  setOrder: React.Dispatch<React.SetStateAction<IOrder>>;
+  selectedContent: string;
+  setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
+  shownSection: IShownSection[];
+  setIsShownSection: React.Dispatch<React.SetStateAction<IShownSection[]>>;
+  handleOrder: (orderOption: string, orderValue: string) => void;
+  handleQuestionDropdownClick: (id: string, isDisabled: boolean) => void;
 }

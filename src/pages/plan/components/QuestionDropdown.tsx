@@ -1,3 +1,4 @@
+import { useCustomizePlanContext } from "../hooks/useCustomizePlanContext";
 import type {
   IDeliveries,
   IOrder,
@@ -8,26 +9,14 @@ import { getCurrentPrice } from "../utils/planUtils";
 interface IQuestionDropdown {
   options: ITableOfContentOption[];
   orderOption: string;
-  order: IOrder;
-  handleOrder: (orderOption: string, orderValue: string) => void;
   id: string;
 }
 
-interface IQuestionList {
+type IQuestionList = Omit<IQuestionDropdown, "options"> & {
   option: ITableOfContentOption;
-  orderOption: string;
-  order: IOrder;
-  handleOrder: (orderOption: string, orderValue: string) => void;
-  id: string;
-}
+};
 
-const QuestionDropdown = ({
-  options,
-  orderOption,
-  handleOrder,
-  order,
-  id,
-}: IQuestionDropdown) => {
+const QuestionDropdown = ({ options, orderOption, id }: IQuestionDropdown) => {
   return (
     <div className="flex flex-col md:flex-row gap-[16px] md:gap-[24px]">
       {options.map((option) => {
@@ -36,8 +25,6 @@ const QuestionDropdown = ({
             key={option.header}
             option={option}
             orderOption={orderOption}
-            handleOrder={handleOrder}
-            order={order}
             id={id}
           />
         );
@@ -46,13 +33,9 @@ const QuestionDropdown = ({
   );
 };
 
-const QuestionList = ({
-  option,
-  orderOption,
-  handleOrder,
-  order,
-  id,
-}: IQuestionList) => {
+const QuestionList = ({ option, orderOption, id }: IQuestionList) => {
+  const { order, handleOrder } = useCustomizePlanContext();
+
   const { header, body } = option;
   const isSelected = order[orderOption as keyof IOrder] === header;
 

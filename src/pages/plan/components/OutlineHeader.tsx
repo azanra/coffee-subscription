@@ -1,10 +1,11 @@
+import { useCustomizePlanContext } from "../hooks/useCustomizePlanContext";
+
 interface IOutlineHeader {
   number: number;
   id: string;
   name: string;
   isSelected: boolean;
   isLast: boolean;
-  setSelectedContent: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const OutlineHeader = ({
@@ -13,8 +14,9 @@ const OutlineHeader = ({
   name,
   isSelected,
   isLast,
-  setSelectedContent,
 }: IOutlineHeader) => {
+  const { setSelectedContent } = useCustomizePlanContext();
+
   const handleClick = () => {
     const activeElement = document.querySelector(`#${id}`);
     if (!activeElement) return;

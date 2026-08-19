@@ -1,15 +1,15 @@
-import { useState } from "react";
-
 import TableOfContent from "./TableOfContent";
 import OrderSummary from "./OrderSummary";
 
-import type { IOrder } from "../interfaces/PlanInterface";
-import { INITIAL_ORDER, QUESTION_LIST } from "../constants/planConst";
+import { QUESTION_LIST } from "../constants/planConst";
 import OutlineHeader from "./OutlineHeader";
+import {
+  CustomizePlanProvider,
+  useCustomizePlanContext,
+} from "../hooks/useCustomizePlanContext";
 
 const CustomizePlan = () => {
-  const [order, setOrder] = useState<IOrder>(INITIAL_ORDER);
-  const [selectedContent, setSelectedContent] = useState("");
+  const { selectedContent } = useCustomizePlanContext();
 
   return (
     <div className="flex flex-col gap-[64px] xxl:flex-row xxl:justify-around">
@@ -23,22 +23,25 @@ const CustomizePlan = () => {
               name={list.name}
               isSelected={selectedContent === list.id}
               isLast={index === QUESTION_LIST.length - 1}
-              setSelectedContent={setSelectedContent}
             />
           );
         })}
       </div>
 
       <div className="flex flex-col xxl:max-w-[730px] gap-[64px] xxl:gap-[80px]">
-        <TableOfContent
-          setSelectedContent={setSelectedContent}
-          order={order}
-          setOrder={setOrder}
-        />
-        <OrderSummary order={order} setOrder={setOrder} />
+        <TableOfContent />
+        <OrderSummary />
       </div>
     </div>
   );
 };
 
-export default CustomizePlan;
+const CustomizePlanWrapper = () => {
+  return (
+    <CustomizePlanProvider>
+      <CustomizePlan />
+    </CustomizePlanProvider>
+  );
+};
+
+export default CustomizePlanWrapper;
