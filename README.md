@@ -152,5 +152,3 @@ The responsive design for this project is done based off quick read responsive d
 
 - [Tailwind Responsive Design](https://tailwindcss.com/docs/responsive-design) - Explaining getting started on how to apply responsive design
 - [Odin React Router](https://www.theodinproject.com/lessons/node-path-react-new-react-router) - Explaining usage of react router and how to get started.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
