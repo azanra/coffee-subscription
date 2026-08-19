@@ -18,11 +18,11 @@ const Content = ({ id, question, options }: IContent) => {
 
   return (
     <div className=" flex flex-col gap-[24px] md:gap-[32px] xxl:gap-[48px]">
-      <div
-        onClick={() => handleQuestionDropdownClick(id, isDisabled)}
-        className="flex items-baseline justify-between md:items-center"
-      >
-        <button>
+      <div className="flex items-baseline justify-between md:items-center">
+        <button
+          className="focus:outline-(--teal-600)"
+          onClick={() => handleQuestionDropdownClick(id, isDisabled)}
+        >
           <h1
             id={`${id}`}
             className={` text-preset-2-mobile text-(--neutral-500) md:text-preset-2 text-start ${!isDisabled ? "cursor-pointer" : ""}`}

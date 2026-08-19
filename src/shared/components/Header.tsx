@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import CoffeeLogo from "../../assets/shared/desktop/logo.svg";
-import HamburgerLogo from "../../assets/shared/mobile/icon-hamburger.svg";
-import CloseLogo from "../../assets/shared/mobile/icon-close.svg";
+import HamburgerLogo from "../../assets/shared/mobile/icon-hamburger.svg?react";
+import CloseLogo from "../../assets/shared/mobile/icon-close.svg?react";
 import useIsMobileScreen from "../hooks/useIsMobileScreen";
 
 import { useState } from "react";
@@ -22,11 +22,9 @@ const Header = () => {
         />
 
         {isMobileScreen ? (
-          <img
-            src={isShow ? CloseLogo : HamburgerLogo}
-            alt="hamburger-logo"
-            onClick={() => setIsShow(!isShow)}
-          />
+          <button onClick={() => setIsShow((prev) => !prev)}>
+            {isShow ? <CloseLogo /> : <HamburgerLogo />}
+          </button>
         ) : (
           <div className="flex gap-[33px] text-(--neutral-500) text-preset-8">
             {NAVIGATION_TAB.map((nav) => {
