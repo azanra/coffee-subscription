@@ -6,16 +6,11 @@ import useIsMobileScreen from "../hooks/useIsMobileScreen";
 
 import { useState } from "react";
 import stringUtils from "../utils/stringUtils";
+import NAVIGATION_TAB from "../const/navConst";
 
 const Header = () => {
   const [isShow, setIsShow] = useState(false);
   const { isMobileScreen } = useIsMobileScreen();
-
-  const navigationTab = [
-    { to: "/", text: "home" },
-    { to: "/about", text: "about us" },
-    { to: "/plan", text: "create your plan" },
-  ];
 
   return (
     <div className="mb-[40px]">
@@ -34,7 +29,7 @@ const Header = () => {
           />
         ) : (
           <div className="flex gap-[33px] text-(--neutral-500) text-preset-8">
-            {navigationTab.map((nav) => {
+            {NAVIGATION_TAB.map((nav) => {
               return (
                 <Link
                   to={nav.to}
@@ -51,7 +46,7 @@ const Header = () => {
 
       {isShow && isMobileScreen && (
         <div className="flex flex-col gap-[32px] text-center px-[82.5px] pt-[80px] pb-[54px] text-(--neutral-900) text-preset-4">
-          {navigationTab.map((nav) => {
+          {NAVIGATION_TAB.map((nav) => {
             return (
               <Link to={nav.to} key={nav.to}>
                 {stringUtils.toTitleCase(nav.text)}

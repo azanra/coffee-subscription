@@ -3,13 +3,9 @@ import Facebook from "../../assets/shared/desktop/icon-facebook.svg?react";
 import Twitter from "../../assets/shared/desktop/icon-twitter.svg?react";
 import Instagram from "../../assets/shared/desktop/icon-instagram.svg?react";
 import { Link } from "react-router";
+import NAVIGATION_TAB from "../const/navConst";
 
 const Footer = () => {
-  const navList = [
-    { to: "/", text: "home" },
-    { to: "/about", text: "about us" },
-    { to: "/plan", text: "create your plan" },
-  ];
   const socialMediaList = [
     <Facebook className="footer-icon" />,
     <Twitter className="footer-icon" />,
@@ -23,7 +19,7 @@ const Footer = () => {
       </div>
 
       <div className="flex items-center justify-center gap-[32px]">
-        {navList.map((list) => {
+        {NAVIGATION_TAB.map((list) => {
           return (
             <Link
               replace
