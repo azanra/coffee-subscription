@@ -13,12 +13,12 @@ const Footer = () => {
   ];
 
   return (
-    <div className="bg-(--neutral-900) p-[32px] flex flex-col gap-[24px] items-center xxl:flex-row xxl:px-[80px] xxl:py-[48px] xxl:justify-between">
+    <footer className="bg-(--neutral-900) p-[32px] flex flex-col gap-[24px] items-center xxl:flex-row xxl:px-[80px] xxl:py-[48px] xxl:justify-between">
       <div className="flex items-center justify-center">
         <CoffeeIcon className="coffee-icon-logo" />
       </div>
 
-      <div className="flex items-center justify-center gap-[32px]">
+      <nav className="flex items-center justify-center gap-[32px]">
         {NAVIGATION_TAB.map((list) => {
           return (
             <Link
@@ -31,8 +31,8 @@ const Footer = () => {
             </Link>
           );
         })}
-      </div>
-      <div className="flex items-center justify-center gap-[24px]">
+      </nav>
+      <nav className="flex items-center justify-center gap-[24px]">
         {socialMediaList.map((list, index) => {
           return (
             <a key={index} href="">
@@ -40,8 +40,8 @@ const Footer = () => {
             </a>
           );
         })}
-      </div>
-    </div>
+      </nav>
+    </footer>
   );
 };
 
