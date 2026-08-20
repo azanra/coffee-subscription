@@ -2,11 +2,11 @@ import { Link } from "react-router";
 
 const CreatePlan = () => {
   return (
-    <div className="create-plan-img px-[24px] py-[96px] md:px-[48px] xxl:px-[80px] xxl:py-[112px] rounded-(--radius-10)">
+    <section className="create-plan-img px-[24px] py-[96px] md:px-[48px] xxl:px-[80px] xxl:py-[112px] rounded-(--radius-10)">
       <div className="flex flex-col gap-[32px] md:max-w-[420px] xxl:max-w-[493px] text-center md:text-start">
-        <h1 className="text-preset-1-mobile md:text-preset-1-tablet xxl:text-preset-1 text-(--neutral-50)">
+        <h2 className="text-preset-1-mobile md:text-preset-1-tablet xxl:text-preset-1 text-(--neutral-50)">
           Great coffee made simple.
-        </h1>
+        </h2>
         <p className="text-preset-6 text-(--neutral-50)">
           Start your mornings with the world's best coffees. Try our expertly
           curated artisan coffees from our best roasters delivered directly to
@@ -21,7 +21,7 @@ const CreatePlan = () => {
           Create your plan
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

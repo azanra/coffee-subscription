@@ -30,10 +30,10 @@ const Headquarter = () => {
     },
   ];
   return (
-    <div className="flex flex-col gap-[64px] xxl:px-[117.5px]">
-      <h1 className="text-preset-4 text-(--neutral-500) text-center md:text-start">
+    <section className="flex flex-col gap-[64px] xxl:px-[117.5px]">
+      <h2 className="text-preset-4 text-(--neutral-500) text-center md:text-start">
         Our headquarters
-      </h1>
+      </h2>
 
       <div className="flex flex-col md:flex-row md:justify-between gap-[24px]">
         {headquarterList.map((item) => {
@@ -44,9 +44,9 @@ const Headquarter = () => {
             >
               <div className="flex items-center justify-center">{item.svg}</div>
               <div className="text-center flex flex-col gap-[24px]">
-                <h2 className="text-preset-3 text-(--neutral-900)">
+                <h3 className="text-preset-3 text-(--neutral-900)">
                   {item.country}
-                </h2>
+                </h3>
                 <div className="text-preset-6 text-(--neutral-900)">
                   <p>{item.street}</p>
                   <p>{item.city}</p>
@@ -58,7 +58,7 @@ const Headquarter = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

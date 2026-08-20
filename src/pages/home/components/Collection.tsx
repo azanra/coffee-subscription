@@ -28,10 +28,10 @@ const Collection = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <h1 className="z-1 md:relative top-[60px] text-preset-1-mobile md:text-collection-tablet xxl:text-collection collection-gradient text-center">
+    <section className="flex flex-col items-center justify-center">
+      <h2 className="z-1 md:relative top-[60px] text-preset-1-mobile md:text-collection-tablet xxl:text-collection collection-gradient text-center">
         our collection
-      </h1>
+      </h2>
 
       <div className="z-2 flex flex-col gap-[32px] md:gap-[24px] xxl:flex-row xxl:gap-[32px] xxl:max-w-[1110px] items-center justify-center">
         {collectionList.map((list) => {
@@ -59,7 +59,7 @@ const Collection = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

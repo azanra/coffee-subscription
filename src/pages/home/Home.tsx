@@ -10,13 +10,13 @@ const Home = () => {
   return (
     <PageWrapper>
       <Header />
-      <div className="flex flex-col gap-[80px] xxl:gap-[140px]">
+      <main className="flex flex-col gap-[80px] xxl:gap-[140px]">
         <CreatePlan />
         <Collection />
         <ChooseUs />
         <Work />
         <Footer />
-      </div>
+      </main>
     </PageWrapper>
   );
 };

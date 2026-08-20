@@ -24,9 +24,9 @@ const SummaryModal = ({
       ref={dialogRef}
       className="dialog backdrop:bg-(--neutral-900) backdrop:opacity-[70%] rounded-(--radius-8) min-w-[311px] md:max-w-[540px]"
     >
-      <h1 className="text-preset-2-mobile md:text-preset-2  px-[16px] py-[24px] md:px-[48px] md:py-[44px] bg-(--neutral-900) text-(--neutral-0)">
+      <h2 className="text-preset-2-mobile md:text-preset-2  px-[16px] py-[24px] md:px-[48px] md:py-[44px] bg-(--neutral-900) text-(--neutral-0)">
         Order Summary
-      </h1>
+      </h2>
 
       <div className="px-[16px] py-[24px] md:p-[48px] flex flex-col gap-[32px] md:gap-[48px]">
         <div className="flex flex-col gap-[20px]">

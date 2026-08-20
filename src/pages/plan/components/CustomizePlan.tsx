@@ -12,7 +12,7 @@ const CustomizePlan = () => {
   const { selectedContent } = useCustomizePlanContext();
 
   return (
-    <div className="flex flex-col gap-[64px] xxl:flex-row xxl:justify-around">
+    <section className="flex flex-col gap-[64px] xxl:flex-row xxl:justify-around">
       <div className="xxl:w-[252px]">
         {QUESTION_LIST.map((list, index) => {
           return (
@@ -32,7 +32,7 @@ const CustomizePlan = () => {
         <TableOfContent />
         <OrderSummary />
       </div>
-    </div>
+    </section>
   );
 };
 

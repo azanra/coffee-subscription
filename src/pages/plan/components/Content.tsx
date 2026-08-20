@@ -23,12 +23,12 @@ const Content = ({ id, question, options }: IContent) => {
           className="focus:outline-(--teal-600)"
           onClick={() => handleQuestionDropdownClick(id, isDisabled)}
         >
-          <h1
+          <h2
             id={`${id}`}
             className={` text-preset-2-mobile text-(--neutral-500) md:text-preset-2 text-start ${!isDisabled ? "cursor-pointer" : ""}`}
           >
             {question}
-          </h1>
+          </h2>
         </button>
         {!isDisabled && (
           <img

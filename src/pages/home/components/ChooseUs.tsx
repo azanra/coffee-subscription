@@ -21,12 +21,12 @@ const ChooseUs = () => {
     },
   ];
   return (
-    <div className="bg-(--neutral-900) rounded-(--radius-12) mb-[672px] md:mb-[323px] xxl:mb-[97px]">
+    <section className="bg-(--neutral-900) rounded-(--radius-12) mb-[672px] md:mb-[323px] xxl:mb-[97px]">
       <div className="flex items-center justify-center">
         <div className="flex flex-col gap-[32px] md:max-w-[540px] px-[16px] py-[64px] md:px-[82px] xxl:pt-[96px]">
-          <h1 className="text-preset-2 text-(--neutral-50) text-center">
+          <h2 className="text-preset-2 text-(--neutral-50) text-center">
             Why choose us?
-          </h1>
+          </h2>
           <p className="text-preset-6 text-(--neutral-50) text-center opacity-[80%]">
             A large part of our role is choosing which particular coffees will
             be featured in our range. This means working closely with the best
@@ -50,9 +50,9 @@ const ChooseUs = () => {
                     </div>
                   </div>
                   <div className="flex flex-col gap-[12px] md:gap-[20px] xxl:gap-[24px] text-center md:text-start xxl:text-center">
-                    <h1 className="text-preset-4 text-(--neutral-50)">
+                    <h3 className="text-preset-4 text-(--neutral-50)">
                       {list.header}
-                    </h1>
+                    </h3>
                     <p className="text-preset-6 text-(--neutral-50)">
                       {list.body}
                     </p>
@@ -63,7 +63,7 @@ const ChooseUs = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
