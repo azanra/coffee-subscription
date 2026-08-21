@@ -6,7 +6,7 @@
   "homepage": "https://azanra.github.io/coffee-subscription",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node create-404.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
